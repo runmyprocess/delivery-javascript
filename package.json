@@ -1,0 +1,57 @@
+{
+  "name": "runmyprocess-javascript-library",
+  "version": "1.0.0",
+  "description": "RunMyProcess JavaScript Library",
+  "directories": {
+    "doc": "./doc",
+    "test": "./test"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "chart.js": "^2.6.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "sweetalert": "^1.1.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.0",
+    "documentation": "^4.0.0-rc.1",
+    "documentation-loader": "^0.1.1-beta",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-jsdoc": "^0.3.2",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsdoc": "^3.1.1",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-documentation": "^3.2.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-mocha": "^4.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "inchjs": "^0.4.1",
+    "mocha": "^3.4.2",
+    "mocha-loader": "^1.1.1",
+    "pump": "^1.0.2",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "scripts": {
+    "watch": "webpack --progress --watch",
+    "start": "webpack-dev-server --open",
+    "test": "mocha",
+    "lint": "eslint -c .eslintrc.json ./src/**",
+    "doc": "documentation build src/** -f html -o doc",
+    "build": "webpack",
+    "gulp": "gulp",
+    "inch": "inchjs suggest src/index.js"
+  },
+  "author": "Franck Martin <fmartin@runmyprocess.com>",
+  "license": "ISC"
+}
