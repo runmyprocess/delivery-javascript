@@ -46,7 +46,7 @@ gulp.task('babel', () => {
 })
 
 // Generating a pretty HTML documentation site
-gulp.task('documentation', function () {
+gulp.task('doc', function () {
   return gulp.src('src/index.js')
     .pipe(documentation('html'))
     .pipe(gulp.dest('./doc'))
@@ -70,6 +70,6 @@ gulp.task('lint', () => {
     .pipe(eslint.failAfterError())
 })
 
-gulp.task('default', ['documentation', 'build'], function () {
+gulp.task('default', ['doc', 'build'], function () {
   // This will only run if the lint task is successful...
 })

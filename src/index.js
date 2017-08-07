@@ -18,17 +18,16 @@ function addOne (input) {
 }
 */
 
-/**
- * Check if a date is later than today.
- * @param  {number} date_ts - Date formatted as a timestamp in seconds.
- * @returns {boolean}         - True if the date is later than today, otherwise false.
- */
-
 var toto = Date.now()
 
 const greeting = ({ name }) => `hello ${name}`
 greeting({ name: 'moe' })
 
+/**
+ * Check if a date is later than today.
+ * @param  {number} date_ts - Date formatted as a timestamp in seconds.
+ * @returns {boolean}         - True if the date is later than today, otherwise false.
+ */
 function bool_check_date_valid (date_ts) {
   /*
       This function returns true if date is greater than today

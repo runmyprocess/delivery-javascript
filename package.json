@@ -52,6 +52,10 @@
     "gulp": "gulp",
     "inch": "inchjs suggest src/index.js"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/franck-rmp/javascript-library.git"
+  },
   "author": "Franck Martin <fmartin@runmyprocess.com>",
   "license": "ISC"
 }
