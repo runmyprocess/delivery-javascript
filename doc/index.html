@@ -25,9 +25,9 @@
               
                 
                 <li><a
-                  href='#bool_check_date_valid'
+                  href='#isfuture'
                   class="">
-                  bool_check_date_valid
+                  isFuture
                   
                 </a>
                 
@@ -35,9 +35,9 @@
               
                 
                 <li><a
-                  href='#is_empty'
+                  href='#isafter'
                   class="">
-                  is_empty
+                  isAfter
                   
                 </a>
                 
@@ -45,9 +45,29 @@
               
                 
                 <li><a
-                  href='#compute_nb_days'
+                  href='#isempty'
                   class="">
-                  compute_nb_days
+                  isEmpty
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#titlecase'
+                  class="">
+                  titleCase
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#inarray'
+                  class="">
+                  inArray
                   
                 </a>
                 
@@ -68,18 +88,18 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='bool_check_date_valid'>
-      bool_check_date_valid
+    <h3 class='fl m0' id='isfuture'>
+      isFuture
     </h3>
     
     
   </div>
   
 
-  <p>Check if a date is later than today.</p>
+  <p>Check if a given date is in the future.</p>
 
 
-  <div class='pre p1 fill-light mt0'>bool_check_date_valid(date_ts: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isFuture</div>
   
   
 
@@ -95,8 +115,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>date_ts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    Date formatted as a timestamp in seconds.
+            <span class='code bold'>date</span> <code class='quiet'>(timestamp)</code>
+	    The date to check.
 
           </div>
           
@@ -111,7 +131,7 @@
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        True if the date is later than today, otherwise false.
+        The date is in the future.
 
       
     
@@ -136,18 +156,18 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='is_empty'>
-      is_empty
+    <h3 class='fl m0' id='isafter'>
+      isAfter
     </h3>
     
     
   </div>
   
 
-  <p>Check if a string is empty.</p>
+  <p>Check if the first date is after the second one.</p>
 
 
-  <div class='pre p1 fill-light mt0'>is_empty(elt: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isAfter</div>
   
   
 
@@ -163,8 +183,17 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>elt</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    String to be checked.
+            <span class='code bold'>date</span> <code class='quiet'>(timestamp)</code>
+	    The date that should be after the other one to return true.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>dateToCompare</span> <code class='quiet'>(timestamp)</code>
+	    The date to compare with.
 
           </div>
           
@@ -179,7 +208,7 @@
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        True if the string is empty, otherwise false.
+        The first date is after the second date.
 
       
     
@@ -204,18 +233,18 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='compute_nb_days'>
-      compute_nb_days
+    <h3 class='fl m0' id='isempty'>
+      isEmpty
     </h3>
     
     
   </div>
   
 
-  <p>Compute the number of days between two dates.</p>
+  <p>Check if a given string is empty.</p>
 
 
-  <div class='pre p1 fill-light mt0'>compute_nb_days(date1_ts: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, date2_ts: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>isEmpty(string: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
   
   
 
@@ -231,17 +260,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>date1_ts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    Start date formatted as a timestamp in seconds.
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>date2_ts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    End date formatted as a timestamp in seconds.
+            <span class='code bold'>string</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The string to check.
 
           </div>
           
@@ -255,8 +275,153 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        Number of days between input dates or -1 if something went wrong.
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Will evaluate to true if value is: null, undefined, NaN, empty string (""), 0 or false.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='titlecase'>
+      titleCase
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Convert a given string to title case.</p>
+
+
+  <div class='pre p1 fill-light mt0'>titleCase</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>string</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The string to convert to title case.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Returns the title case string.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='inarray'>
+      inArray
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if predicate returns truthy for any element of collection. Iteration is stopped once predicate returns truthy.</p>
+
+
+  <div class='pre p1 fill-light mt0'>inArray(collection: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), predicate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>collection</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    The collection to iterate over.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>predicate</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The function invoked per iteration.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Returns true if any element passes the predicate check, else false.
 
       
     
