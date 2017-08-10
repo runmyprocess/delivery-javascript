@@ -26,3 +26,15 @@ lint_job:
   script:
     - npm run lint
   when: always
+
+#deploy_job:
+#  stage: deploy
+#  script:
+#    #- curl https://...
+#  when: manual
+
+#cleanup_job:
+#  stage: clean
+#  script:
+#    #- cleanup after jobs
+#  when: always
