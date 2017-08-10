@@ -1,0 +1,40 @@
+image: node:6.10.0
+
+stages:
+- build
+- test
+- deploy
+- cleanup
+
+build_job:
+  stage: build
+  script:
+    - npm -v
+    #- npm install
+    - npm run bundle
+    - npm run minify
+  when: always
+
+test_job:
+  stage: test
+  script:
+    - npm run test
+  when: always
+
+lint_job:
+  stage: test
+  script:
+    - npm run lint
+  when: always
+
+deploy_job:
+  stage: deploy
+  script:
+    #- curl https://...
+  when: manual
+
+cleanup_job:
+  stage: clean
+  script:
+    #- cleanup after jobs
+  when: always
