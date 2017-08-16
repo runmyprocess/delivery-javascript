@@ -1,3 +1,4 @@
+var delivery =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -2177,43 +2178,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mod_string__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mod_array__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mod_chart__ = __webpack_require__(173);
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "date", function() { return __WEBPACK_IMPORTED_MODULE_0__mod_date__; });
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "string", function() { return __WEBPACK_IMPORTED_MODULE_1__mod_string__; });
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "array", function() { return __WEBPACK_IMPORTED_MODULE_2__mod_array__; });
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "chart", function() { return __WEBPACK_IMPORTED_MODULE_3__mod_chart__; });
+
+
 
 
 
 
 
 console.log('### isFuture (date)')
-console.log('31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["b" /* isFuture */](new Date(2014, 11, 31)))
-console.log('31/11/2019 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["b" /* isFuture */](new Date(2019, 11, 31)))
-console.log('Today --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["b" /* isFuture */](Date.now()))
+console.log('31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isFuture"](new Date(2014, 11, 31)))
+console.log('31/11/2019 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isFuture"](new Date(2019, 11, 31)))
+console.log('Today --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isFuture"](Date.now()))
 console.log(' ')
 
 console.log('### isAfter (date, dateToCompare)')
-console.log('31/11/2014 - 31/11/2019 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["a" /* isAfter */](new Date(2014, 11, 31), new Date(2019, 11, 31)))
-console.log('31/11/2019 - 31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["a" /* isAfter */](new Date(2019, 11, 31), new Date(2014, 11, 31)))
-console.log('31/11/2014 - 31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["a" /* isAfter */](new Date(2014, 11, 31), new Date(2014, 11, 31)))
+console.log('31/11/2014 - 31/11/2019 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isAfter"](new Date(2014, 11, 31), new Date(2019, 11, 31)))
+console.log('31/11/2019 - 31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isAfter"](new Date(2019, 11, 31), new Date(2014, 11, 31)))
+console.log('31/11/2014 - 31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isAfter"](new Date(2014, 11, 31), new Date(2014, 11, 31)))
 console.log(' ')
 
 var testString = 'Welcome to RegExr v2.1 by gskinner.com, proudly hosted by Media Temple!'
 
 console.log('### properCase (string)')
 console.log('String : ' + testString)
-console.log('stringToProperCase (OLD) --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["b" /* stringToProperCase */](testString))
-console.log('properCase (NEW) --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["a" /* properCase */](testString))
+console.log('stringToProperCase (OLD) --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["stringToProperCase"](testString))
+console.log('properCase (NEW) --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["properCase"](testString))
 console.log(' ')
 
 // titleCase function directly imported from Voca
 console.log('### titleCase (string)')
 console.log('String : ' + testString)
-console.log('titleCase --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["c" /* titleCase */](testString))
+console.log('titleCase --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["titleCase"](testString))
 console.log(' ')
 
 var testArray = [{'a': 'toto'}, {'b': 'tata'}, {'c': 'tutu'}]
 console.log('### inArray (collection, predicate)')
 // console.log('Array : ' + _.toString(testArray))
-console.log('{"a":"toto"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["a" /* inArray */](testArray, {'a': 'toto'}))
-console.log('{"a":"tata"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["a" /* inArray */](testArray, {'b': 'toto'}))
-console.log('{"b":"toto"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["a" /* inArray */](testArray, {'a': 'tata'}))
+console.log('{"a":"toto"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["inArray"](testArray, {'a': 'toto'}))
+console.log('{"a":"tata"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["inArray"](testArray, {'b': 'toto'}))
+console.log('{"b":"toto"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["inArray"](testArray, {'a': 'tata'}))
 console.log(' ')
 
 // -----------------------------------------------------------------
@@ -2238,12 +2245,13 @@ document.body.appendChild(component())
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_is_future__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_date_fns_is_after__);
-/* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future___default.a; });
-/* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after___default.a; });
+/* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "isFuture", function() { return __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future___default.a; });
+/* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "isAfter", function() { return __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after___default.a; });
 
 
 
@@ -2353,16 +2361,17 @@ module.exports = isAfter
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export isEmpty */
-/* harmony export (immutable) */ __webpack_exports__["b"] = stringToProperCase;
-/* harmony export (immutable) */ __webpack_exports__["a"] = properCase;
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["isEmpty"] = isEmpty;
+/* harmony export (immutable) */ __webpack_exports__["stringToProperCase"] = stringToProperCase;
+/* harmony export (immutable) */ __webpack_exports__["properCase"] = properCase;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_toLower__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_toLower___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_toLower__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_startCase__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_startCase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_startCase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_voca_title_case__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_voca_title_case___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_voca_title_case__);
-/* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2_voca_title_case___default.a; });
+/* harmony reexport (default from non-hamory) */ __webpack_require__.d(__webpack_exports__, "titleCase", function() { return __WEBPACK_IMPORTED_MODULE_2_voca_title_case___default.a; });
 
 
 
@@ -3691,7 +3700,8 @@ module.exports = exports['default'];
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = inArray;
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["inArray"] = inArray;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_some__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_some___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_some__);
 // import _ from 'lodash'
@@ -6340,6 +6350,7 @@ module.exports = isIterateeCall;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_britecharts_dist_umd_bar_min__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_britecharts_dist_umd_bar_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_britecharts_dist_umd_bar_min__);

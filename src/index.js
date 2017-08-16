@@ -3,6 +3,8 @@ import * as string from './mod/string'
 import * as array from './mod/array'
 import * as chart from './mod/chart'
 
+export {date, string, array, chart}
+
 console.log('### isFuture (date)')
 console.log('31/11/2014 --> ' + date.isFuture(new Date(2014, 11, 31)))
 console.log('31/11/2019 --> ' + date.isFuture(new Date(2019, 11, 31)))
