@@ -70,10 +70,8 @@ Documentation is written as [JSDoc comments](http://usejsdoc.org/) within your c
 npm run lint
 ```
 
-| | |
-| --- | --- |
-| Input | All __.js__ files from the __/src__ directory and subdirectories. |
-| Output | Lint errors are printed to the console. |
+-   __Input:__ All __.js__ files from the __/src__ directory and subdirectories.
+-   __Output:__ Lint errors are printed to the console. |
 
 ### What is ESLint ?
 
@@ -98,11 +96,8 @@ _Note: Atom will automatically use the .eslintrc configuration file in your proj
 npm run test
 ```
 
-| | |
-| --- | --- |
-| Input | All __.js__ files from the __/test__ directory and subdirectories. |
-| Output | Test errors are printed to the console. |
-
+-   __Input:__ All __.js__ files from the __/test__ directory and subdirectories.
+-   __Output:__ Test errors are printed to the console.
 
 ### What is Mocha ?
 
@@ -123,10 +118,8 @@ Mocha is a JavaScript testing framework which can run tests in Node.js or a brow
 npm run doc
 ```
 
-| | |
-| --- | --- |
-| Input | All __.js__ files from the __/src__ directory and subdirectories. |
-| Output | HTML documentation is generated to the __/doc__ directory. |
+-   __Input:__ All __.js__ files from the __/src__ directory and subdirectories.
+-   __Output:__ HTML documentation is generated to the __/doc__ directory.
 
 ### What is Documentation.js ?
 
@@ -160,10 +153,8 @@ http://babeljs.io/docs/usage/babelrc/
 npm run minify
 ```
 
-| | |
-| --- | --- |
-| Input | All __.js__ files from the __/src__ directory and subdirectories. |
-| Output |  |
+-   __Input:__ All __.js__ files from the __/src__ directory and subdirectories.
+-   __Output:__
 
 ### What is UglifyJS2 ?
 
@@ -180,10 +171,8 @@ UglifyJS is a JavaScript parser, minifier, compressor and beautifier toolkit.
 npm run build
 ```
 
-| | |
-| --- | --- |
-| Input | All __.js__ files from the __/src__ directory and subdirectories. |
-| Output |  |
+-   __Input:__ All __.js__ files from the __/src__ directory and subdirectories.
+-   __Output:__
 
 ### What is Gulp ?
 
