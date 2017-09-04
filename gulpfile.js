@@ -70,7 +70,7 @@ gulp.task('test', function () {
   gulp.src(['test/*.js'], {read: false})
   // `gulp-mocha` needs filepaths so you can't have any plugins before it
     .pipe(mocha({
-      reporter: 'spec',
+      reporter: 'JSON',
       require: 'babel-register',
       globals: {
         should: require('chai')
