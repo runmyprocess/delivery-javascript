@@ -1,5 +1,5 @@
 import * as d3 from 'd3-selection'
-import bar from 'britecharts/dist/umd/bar.min'
+import Bar from 'britecharts/dist/umd/bar.min'
 import miniTooltip from 'britecharts/dist/umd/mini-tooltip.min'
 
 // const bar = require('./../src/charts/bar');
@@ -34,7 +34,7 @@ const data = [
   }
 ]
 
-let barChart = new bar()
+let barChart = new Bar()
 let barContainer = d3.select('.chart')
 let containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false
 

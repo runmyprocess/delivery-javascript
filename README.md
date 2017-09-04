@@ -143,7 +143,8 @@ Babel is a transpiler for JavaScript best known for its ability to turn ES6 (the
 ### Configuration
 
 Babel is configured through the __.babelrc__ file in your project folder.
-http://babeljs.io/docs/usage/babelrc/
+
+-   [http://babeljs.io/docs/usage/babelrc/](http://babeljs.io/docs/usage/babelrc/)
 
 ## Process 5 - Minify Code
 

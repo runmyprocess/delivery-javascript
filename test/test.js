@@ -7,44 +7,53 @@ module.exports = context;
 */
 
 /*
-TODO Why es6 import not working here ?
-import chai from 'chai'
-import {isEmpty} from '../src/mod/string'
-
 let expect = chai.expect
 let should = chai.should()
 let assert = chai.assert
 */
+
 import chai from 'chai'
-import {isEmpty} from '../src/mod/string'
+import * as date from '../src/mod/date'
+import * as string from '../src/mod/string'
 
 // http://www.albertgao.xyz/2016/12/09/testing-via-mocha-and-chai-in-es5-and-es6/
 
 describe('string', function () {
   describe('isEmpty', function () {
     it('should return true when the value is undefined', function () {
-      chai.assert.equal(true, isEmpty(undefined))
+      chai.assert.equal(true, string.isEmpty(undefined))
     })
     it('should return true when the value is null', function () {
-      chai.assert.equal(true, isEmpty(null))
+      chai.assert.equal(true, string.isEmpty(null))
     })
     it('should return true when the value is NaN', function () {
-      chai.assert.equal(true, isEmpty(NaN))
+      chai.assert.equal(true, string.isEmpty(NaN))
     })
     it('should return true when the value is false', function () {
-      chai.assert.equal(true, isEmpty(false))
+      chai.assert.equal(true, string.isEmpty(false))
     })
     it('should return true when the value is 0', function () {
-      chai.assert.equal(true, isEmpty(0))
+      chai.assert.equal(true, string.isEmpty(0))
     })
     it('should return true when the value is ""', function () {
-      chai.assert.equal(true, isEmpty(''))
+      chai.assert.equal(true, string.isEmpty(''))
     })
     it('should return false when the value is "Hello"', function () {
-      chai.assert.equal(false, isEmpty('Hello'))
+      chai.assert.equal(false, string.isEmpty('Hello'))
     })
     it('should return false when the value is 25', function () {
-      chai.assert.equal(false, isEmpty(25))
+      chai.assert.equal(false, string.isEmpty(25))
+    })
+  })
+})
+
+describe('date', function () {
+  describe('isFuture', function () {
+    it('should return true when the value is 2050-11-31', function () {
+      chai.assert.equal(true, date.isFuture(new Date(2050, 12, 31)))
+    })
+    it('should return false when the value is 2014-01-01', function () {
+      chai.assert.equal(false, date.isFuture(new Date(2014, 1, 1)))
     })
   })
 })

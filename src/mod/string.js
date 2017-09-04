@@ -16,14 +16,21 @@ export function isEmpty (string) {
 /**
  * Convert a given string to title case.
  * @param {string} string - The string to convert to title case.
- * @returns {boolean} - Returns the title case string.
+ * @returns {string} - Returns the title case string.
  */
 export {titleCase}
 
+/*
 export function stringToProperCase (fp_sInput) {
   return fp_sInput.toLowerCase().replace(/(^|\s|[\-\,\.])\w/g, function (L) { return L.toUpperCase() }).replace(/ /g, ' ').replace(/\s+/g, ' ').trim()
 }
+*/
 
+/**
+ * Convert a string to the proper case.
+ * @param  {string} string - The string to convert to title case.
+ * @returns {string} - Returns the title case string.
+ */
 export function properCase (string) {
   return startCase(toLower(string))
 }
