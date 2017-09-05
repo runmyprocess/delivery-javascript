@@ -1,9 +1,12 @@
 import * as date from './mod/date'
 import * as string from './mod/string'
 import * as array from './mod/array'
+import * as alert from './mod/alert'
 import * as chart from './mod/chart'
 
-export {date, string, array, chart}
+export {date, string, array, alert, chart}
+
+alert.show('hello World!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit libero vel sagittis tempor.', 'error')
 
 console.log('### isFuture (date)')
 console.log('31/11/2014 --> ' + date.isFuture(new Date(2014, 11, 31)))
@@ -21,7 +24,7 @@ var testString = 'Welcome to RegExr v2.1 by gskinner.com, proudly hosted by Medi
 
 console.log('### properCase (string)')
 console.log('String : ' + testString)
-console.log('stringToProperCase (OLD) --> ' + string.stringToProperCase(testString))
+// console.log('stringToProperCase (OLD) --> ' + string.stringToProperCase(testString))
 console.log('properCase (NEW) --> ' + string.properCase(testString))
 console.log(' ')
 
