@@ -13,6 +13,6 @@ Copyright (c) [Fujitsu RunMyProcess](https://www.runmyprocess.com/) - 2017
 -   [David Courtaigne](mailto:dcourtaigne@runmyprocess.com)
 -   [Franck Martin](mailto:fmartin@runmyprocess.com)
 
-# documentation
+## Documentation
 
 [Delivery JavaScript Library documentation](https://runmyprocess.atlassian.net/wiki/spaces/javascript/overview)
