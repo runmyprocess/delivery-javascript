@@ -1,6 +1,10 @@
 import * as d3 from 'd3-selection'
-import Bar from 'britecharts/dist/umd/bar.min'
+
+import bar from 'britecharts/dist/umd/bar.min'
 import miniTooltip from 'britecharts/dist/umd/mini-tooltip.min'
+
+import donut from 'britecharts/dist/umd/donut.min'
+import legend from 'britecharts/dist/umd/legend.min'
 
 // const bar = require('./../src/charts/bar');
 // const miniTooltip = require('./../src/charts/mini-tooltip');
@@ -34,6 +38,53 @@ const data = [
   }
 ]
 
+function createHorizontalBarChart (dataset, container) {
+  var barChart = bar()
+  var tooltip = miniTooltip()
+  var barContainer = d3.select(container)
+
+  /*
+  d3.select('body')
+    .append('svg')
+    .attr('class', 'chart')
+    .attr('width', '400')
+    .attr('height', '300')
+  var barContainer = d3.select('svg.chart')
+  */
+
+  var containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false
+  console.log(containerWidth)
+  var tooltipContainer
+
+  if (containerWidth) {
+    barChart
+      .isHorizontal(true)
+      .isAnimated(true)
+      .margin({
+        left: 120,
+        right: 20,
+        top: 20,
+        bottom: 30
+      })
+      // .colorSchema(colors.colorSchemas.britecharts)
+      .width(containerWidth)
+      .yAxisPaddingBetweenChart(30)
+      .height(300)
+      .percentageAxisToMaxRatio(1.3)
+      .on('customMouseOver', tooltip.show)
+      .on('customMouseMove', tooltip.update)
+      .on('customMouseOut', tooltip.hide)
+
+    barContainer.datum(dataset).call(barChart)
+
+    tooltipContainer = d3.select('.chart .bar-chart .metadata-group')
+    tooltipContainer.datum([]).call(tooltip)
+  }
+}
+
+createHorizontalBarChart(data, '.chart')
+
+/*
 let barChart = new Bar()
 let barContainer = d3.select('.chart')
 let containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false
@@ -63,6 +114,91 @@ barContainer.datum(data).call(barChart)
 
 tooltipContainer = d3.select('.bar-chart .metadata-group')
 tooltipContainer.datum([]).call(tooltip)
+*/
+
+const donutData = [
+  {
+    quantity: 1,
+    percentage: 20,
+    name: 'glittering',
+    id: 1
+  },
+  {
+    quantity: 1,
+    percentage: 50,
+    name: 'luminous',
+    id: 2
+  },
+  {
+    quantity: 1,
+    percentage: 50,
+    name: 'vivid',
+    id: 3
+  }
+]
+
+const colors = [
+  '#ccf7f6',
+  '#70e4e0',
+  '#00d8d2',
+  '#00acaf',
+  '#007f8c',
+  '#005e66',
+  '#003c3f',
+  '#002d2f',
+  '#0d2223'
+]
+
+function createDonutChart (dataset, container) {
+  var legendChart = getLegendChart(dataset)
+  var donutChart = donut()
+  var donutContainer = d3.select(container)
+  var containerWidth = donutContainer.node() ? donutContainer.node().getBoundingClientRect().width : false
+
+  if (containerWidth) {
+    donutChart
+      .isAnimated(true)
+      .highlightSliceById(2)
+      .width(containerWidth)
+      .height(containerWidth)
+      .externalRadius(containerWidth / 2.5)
+      .internalRadius(containerWidth / 5)
+      .on('customMouseOver', function (data) {
+        legendChart.highlight(data.data.id)
+      })
+      .on('customMouseOut', function () {
+        legendChart.clearHighlight()
+      })
+
+    donutContainer.datum(dataset).call(donutChart)
+  }
+}
+
+function getLegendChart (dataset) {
+  var legendChart = legend()
+  var legendContainer = d3.select('.legend')
+  var containerWidth = legendContainer.node() ? legendContainer.node().getBoundingClientRect().width : false
+
+  if (containerWidth) {
+    d3.select('.legend .britechart-legend').remove()
+
+    legendChart
+      .width(containerWidth * 0.8)
+      .height(200)
+      .numberFormat('s')
+
+    legendContainer.datum(dataset).call(legendChart)
+
+    return legendChart
+  }
+}
+
+createDonutChart(donutData, '.donut')
+
+// Redraw charts on window resize
+// pubsub.subscribe('resize', redrawCharts)
+
+// legendContainer.datum(dataset).call(legendChart)
 
 /*
 d3.select('body')

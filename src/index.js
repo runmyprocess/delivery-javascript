@@ -1,12 +1,12 @@
 import * as date from './mod/date'
 import * as string from './mod/string'
 import * as array from './mod/array'
-import * as alert from './mod/alert'
+import {alert} from './mod/alert'
 import * as chart from './mod/chart'
 
 export {date, string, array, alert, chart}
 
-alert.show('hello World!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit libero vel sagittis tempor.', 'error')
+alert('hello World!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit libero vel sagittis tempor.', 'error')
 
 console.log('### isFuture (date)')
 console.log('31/11/2014 --> ' + date.isFuture(new Date(2014, 11, 31)))
