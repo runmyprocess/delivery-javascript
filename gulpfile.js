@@ -20,11 +20,11 @@ const mocha = require('gulp-mocha')
 const documentation = require('gulp-documentation')
 
 // Utilities
+const sequence = require('gulp-sequence')
 const rename = require('gulp-rename')
 const gutil = require('gulp-util')
 
 // Webpack config
-// Use Webpack configuration file : webpack.config.js
 var webpackConfig = require('./webpack.config.js')
 
 const srcFiles = [
@@ -118,6 +118,8 @@ gulp.task('build', function () {
     }))
     .pipe(gulp.dest('./dist'))
 })
+
+gulp.task('toto', sequence(['lint', 'test'], ['doc', 'build']))
 
 gulp.task('default', ['doc', 'build'], function () {
   // This will only run if the lint task is successful...
