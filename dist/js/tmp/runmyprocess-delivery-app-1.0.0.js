@@ -2301,7 +2301,8 @@ var DELIVERY =
     } else {
       var dateStart = new Date(start * 1000);
       var dateEnd = new Date(end * 1000);
-      return __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days___default()(dateEnd, dateStart);
+      var duration = Math.max(0, __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days___default()(dateEnd, dateStart));
+      return duration;
     }
   }
 

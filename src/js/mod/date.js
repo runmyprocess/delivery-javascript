@@ -29,6 +29,7 @@ export function duration (start, end) {
   } else {
     var dateStart = new Date(start * 1000)
     var dateEnd = new Date(end * 1000)
-    return differenceInCalendarDays(dateEnd, dateStart)
+    var duration = Math.max(0, differenceInCalendarDays(dateEnd, dateStart))
+    return duration
   }
 }
