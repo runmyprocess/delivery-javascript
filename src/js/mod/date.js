@@ -15,3 +15,7 @@ export {isFuture}
  * @returns {boolean} - The first date is after the second date.
  */
 export {isAfter}
+
+export function duration (start, end) {
+  return '0'
+}

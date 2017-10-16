@@ -2262,6 +2262,7 @@ var DELIVERY =
   "use strict";
 
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+  /* harmony export (immutable) */__webpack_exports__["duration"] = duration;
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future__ = __webpack_require__(47);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_is_future__);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after__ = __webpack_require__(49);
@@ -2285,6 +2286,10 @@ var DELIVERY =
    * @param {timestamp} dateToCompare - The date to compare with.
    * @returns {boolean} - The first date is after the second date.
    */
+
+  function duration(start, end) {
+    return '0';
+  }
 
   /***/
 },
