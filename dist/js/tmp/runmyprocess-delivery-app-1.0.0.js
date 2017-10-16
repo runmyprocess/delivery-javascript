@@ -3726,10 +3726,19 @@ var DELIVERY =
     return __WEBPACK_IMPORTED_MODULE_0_lodash_some___default()(collection, predicate);
   }
 
-  function sumColumn(string) {
-    return string.reduce(function (accumulator, currentValue) {
-      return accumulator + Number(currentValue);
-    }, 0);
+  /**
+   * Sum the values of the column of an Array Widget.
+   * @param {string} indexedValues - Array-like string returned by RMPApplication.getAllIndexedValues.
+   * @returns {number} - Sum of the column's values.
+   */
+  function sumColumn(indexedValues) {
+    if (!indexedValues) {
+      return '0';
+    } else {
+      return indexedValues.reduce(function (accumulator, currentValue) {
+        return accumulator + Number(currentValue);
+      }, 0);
+    }
   }
 
   /***/
