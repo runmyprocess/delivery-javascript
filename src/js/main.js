@@ -4,8 +4,9 @@ import * as array from './mod/array'
 import {alert} from './mod/alert'
 // import * as chart from './mod/chart'
 
-export {date, string, array, alert, chart}
+export {date, string, array, alert}
 
+/*
 alert('hello World!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit libero vel sagittis tempor.', 'error')
 
 console.log('### isFuture (date)')
@@ -41,7 +42,7 @@ console.log('{"a":"toto"} --> ' + array.inArray(testArray, {'a': 'toto'}))
 console.log('{"a":"tata"} --> ' + array.inArray(testArray, {'b': 'toto'}))
 console.log('{"b":"toto"} --> ' + array.inArray(testArray, {'a': 'tata'}))
 console.log(' ')
-
+*/
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------
 // -----------------------------------------------------------------

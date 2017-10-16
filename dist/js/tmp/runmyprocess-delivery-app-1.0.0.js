@@ -2181,9 +2181,6 @@ var DELIVERY =
   "use strict";
 
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-  /* harmony export (binding) */__webpack_require__.d(__webpack_exports__, "chart", function () {
-    return chart;
-  });
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__mod_date__ = __webpack_require__(46);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_1__mod_string__ = __webpack_require__(50);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_2__mod_array__ = __webpack_require__(80);
@@ -2204,42 +2201,43 @@ var DELIVERY =
   // import * as chart from './mod/chart'
 
 
-  Object(__WEBPACK_IMPORTED_MODULE_3__mod_alert__["a" /* alert */])('hello World!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit libero vel sagittis tempor.', 'error');
-
-  console.log('### isFuture (date)');
-  console.log('31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isFuture"](new Date(2014, 11, 31)));
-  console.log('31/11/2019 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isFuture"](new Date(2019, 11, 31)));
-  console.log('Today --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isFuture"](Date.now()));
-  console.log(' ');
-
-  console.log('### isAfter (date, dateToCompare)');
-  console.log('31/11/2014 - 31/11/2019 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isAfter"](new Date(2014, 11, 31), new Date(2019, 11, 31)));
-  console.log('31/11/2019 - 31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isAfter"](new Date(2019, 11, 31), new Date(2014, 11, 31)));
-  console.log('31/11/2014 - 31/11/2014 --> ' + __WEBPACK_IMPORTED_MODULE_0__mod_date__["isAfter"](new Date(2014, 11, 31), new Date(2014, 11, 31)));
-  console.log(' ');
-
-  var testString = 'Welcome to RegExr v2.1 by gskinner.com, proudly hosted by Media Temple!';
-
-  console.log('### properCase (string)');
-  console.log('String : ' + testString);
+  /*
+  alert('hello World!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit libero vel sagittis tempor.', 'error')
+  
+  console.log('### isFuture (date)')
+  console.log('31/11/2014 --> ' + date.isFuture(new Date(2014, 11, 31)))
+  console.log('31/11/2019 --> ' + date.isFuture(new Date(2019, 11, 31)))
+  console.log('Today --> ' + date.isFuture(Date.now()))
+  console.log(' ')
+  
+  console.log('### isAfter (date, dateToCompare)')
+  console.log('31/11/2014 - 31/11/2019 --> ' + date.isAfter(new Date(2014, 11, 31), new Date(2019, 11, 31)))
+  console.log('31/11/2019 - 31/11/2014 --> ' + date.isAfter(new Date(2019, 11, 31), new Date(2014, 11, 31)))
+  console.log('31/11/2014 - 31/11/2014 --> ' + date.isAfter(new Date(2014, 11, 31), new Date(2014, 11, 31)))
+  console.log(' ')
+  
+  var testString = 'Welcome to RegExr v2.1 by gskinner.com, proudly hosted by Media Temple!'
+  
+  console.log('### properCase (string)')
+  console.log('String : ' + testString)
   // console.log('stringToProperCase (OLD) --> ' + string.stringToProperCase(testString))
-  console.log('properCase (NEW) --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["properCase"](testString));
-  console.log(' ');
-
+  console.log('properCase (NEW) --> ' + string.properCase(testString))
+  console.log(' ')
+  
   // titleCase function directly imported from Voca
-  console.log('### titleCase (string)');
-  console.log('String : ' + testString);
-  console.log('titleCase --> ' + __WEBPACK_IMPORTED_MODULE_1__mod_string__["titleCase"](testString));
-  console.log(' ');
-
-  var testArray = [{ 'a': 'toto' }, { 'b': 'tata' }, { 'c': 'tutu' }];
-  console.log('### inArray (collection, predicate)');
+  console.log('### titleCase (string)')
+  console.log('String : ' + testString)
+  console.log('titleCase --> ' + string.titleCase(testString))
+  console.log(' ')
+  
+  var testArray = [{'a': 'toto'}, {'b': 'tata'}, {'c': 'tutu'}]
+  console.log('### inArray (collection, predicate)')
   // console.log('Array : ' + _.toString(testArray))
-  console.log('{"a":"toto"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["inArray"](testArray, { 'a': 'toto' }));
-  console.log('{"a":"tata"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["inArray"](testArray, { 'b': 'toto' }));
-  console.log('{"b":"toto"} --> ' + __WEBPACK_IMPORTED_MODULE_2__mod_array__["inArray"](testArray, { 'a': 'tata' }));
-  console.log(' ');
-
+  console.log('{"a":"toto"} --> ' + array.inArray(testArray, {'a': 'toto'}))
+  console.log('{"a":"tata"} --> ' + array.inArray(testArray, {'b': 'toto'}))
+  console.log('{"b":"toto"} --> ' + array.inArray(testArray, {'a': 'tata'}))
+  console.log(' ')
+  */
   // -----------------------------------------------------------------
   // -----------------------------------------------------------------
   // -----------------------------------------------------------------
