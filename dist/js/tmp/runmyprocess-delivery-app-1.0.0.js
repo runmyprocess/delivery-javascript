@@ -2296,12 +2296,12 @@ var DELIVERY =
    * @returns {integer} - Number of days between the dates.
    */
   function duration(start, end) {
-    if (!start || !end) {
+    if (!start || !end || start > end) {
       return '0';
     } else {
       var dateStart = new Date(start * 1000);
       var dateEnd = new Date(end * 1000);
-      var duration = Math.max(0, __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days___default()(dateEnd, dateStart));
+      var duration = __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days___default()(dateEnd, dateStart);
       return duration;
     }
   }

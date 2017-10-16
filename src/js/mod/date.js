@@ -24,12 +24,12 @@ export {isAfter}
  * @returns {integer} - Number of days between the dates.
  */
 export function duration (start, end) {
-  if (!start || !end) {
+  if (!start || !end || (start > end)) {
     return '0'
   } else {
     var dateStart = new Date(start * 1000)
     var dateEnd = new Date(end * 1000)
-    var duration = Math.max(0, differenceInCalendarDays(dateEnd, dateStart))
+    var duration = differenceInCalendarDays(dateEnd, dateStart)
     return duration
   }
 }
