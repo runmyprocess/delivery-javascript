@@ -1,5 +1,6 @@
 import isFuture from 'date-fns/is_future'
 import isAfter from 'date-fns/is_after'
+import differenceInCalendarDays from 'date-fns/difference_in_calendar_days'
 
 /**
  * Check if a given date is in the future.
@@ -23,5 +24,11 @@ export {isAfter}
  * @returns {integer} - Number of days between the dates.
  */
 export function duration (start, end) {
-  return '0'
+  if (!start || !end) {
+    return '0'
+  } else {
+    var dateStart = new Date(start * 1000)
+    var dateEnd = new Date(end * 1000)
+    return differenceInCalendarDays(dateEnd, dateStart)
+  }
 }
