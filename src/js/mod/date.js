@@ -16,6 +16,12 @@ export {isFuture}
  */
 export {isAfter}
 
+/**
+ * Calculate the duration in days between two dates.
+ * @param   {timestamp} start - Start date expressed as a timestamp in seconds.
+ * @param   {timestamp} end - End date expressed as a timestamp in seconds.
+ * @returns {integer} - Number of days between the dates.
+ */
 export function duration (start, end) {
   return '0'
 }
