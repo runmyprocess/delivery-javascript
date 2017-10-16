@@ -44,15 +44,15 @@
 
         <!-- DOWNLOAD -->
         <h2>Download</h2>
-        <p>Download the latest version ( 1.0.0 ) of the Delivery JavaScript library.
-        <p><a class="button" href="dist/js/runmyprocess-delivery-app-1.0.0.min.js" download>Download</a></p>
+        <p>Download the latest version ( <%- version %> ) of the Delivery JavaScript library.
+        <p><a class="button" href="dist/js/<%- prefix %>-<%- version %>.min.js" download>Download</a></p>
 
         <!-- ARCHIVES -->
         <h2>Archives</h2>
         <ul>
-          
-            <li><a href="dist/js/archive/runmyprocess-delivery-app-1.0.0.min.js" download>runmyprocess-delivery-app-1.0.0.min.js</a></li>
-          
+          <% _.forEach(archives, function(archive) { %>
+            <li><a href="dist/js/archive/<%- archive %>" download><%- archive %></a></li>
+          <% }); %>
         </ul>
 
       </div>
@@ -64,25 +64,23 @@
 
         <!-- PRESENTATION -->
         <h3>Presentation</h3>
-        <p>This JavaScript library is intended to be used  by RunMyProcess Delivery Team in order to implement standard functions.</p>
-        <p>Version: 1.0.0</p>
+        <p><%= description %></p>
+        <p>Version: <%= version %></p>
 
         <!-- SUPPORT -->
         <h3>Support</h3>
         <ul>
           <li><a target="_blank" href="doc/index.html">Read the documentation</a></li>
-          <li><a target="_blank" href="https://runmyprocess.atlassian.net/wiki/spaces/delivery/pages/29884678/Howto+-+Use+the+JavaScript+library">Read the Howto Guide</a></li>
-          <li><a target="_blank" href="https://runmyprocess.atlassian.net/secure/RapidBoard.jspa?projectKey=DELJS">Report an issue</a></li>
+          <li><a target="_blank" href="<%= homepage %>">Read the Howto Guide</a></li>
+          <li><a target="_blank" href="<%= bugs %>">Report an issue</a></li>
         </ul>
 
         <!-- CONTRIBUTORS -->
         <h3>Contributors</h3>
         <ul>
-          
-            <li><a href="mailto:dcourtaigne@runmyprocess.com">David Courtaigne</a></li>
-          
-            <li><a href="mailto:fmartin@runmyprocess.com">Franck Martin</a></li>
-          
+          <% _.forEach(contributors, function(contributor) { %>
+            <li><a href="mailto:<%- contributor.email %>"><%- contributor.name %></a></li>
+          <% }); %>
         </ul>
 
       </div>

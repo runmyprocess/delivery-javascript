@@ -7,12 +7,12 @@ var path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/main.js',
   devServer: {
     contentBase: './dist'
   },
   // Generate source map
-  devtool: '#cheap-module-source-map',
+  // devtool: '#cheap-module-source-map',
   module: {},
   plugins: [
     new webpack.DefinePlugin({
@@ -23,6 +23,6 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'var',
-    library: 'delivery'
+    library: 'DELIVERY'
   }
 }

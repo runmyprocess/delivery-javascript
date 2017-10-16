@@ -13,8 +13,8 @@ let assert = chai.assert
 */
 
 import chai from 'chai'
-import * as date from '../src/mod/date'
-import * as string from '../src/mod/string'
+import * as date from '../src/js/mod/date'
+import * as string from '../src/js/mod/string'
 
 // http://www.albertgao.xyz/2016/12/09/testing-via-mocha-and-chai-in-es5-and-es6/
 

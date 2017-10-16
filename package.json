@@ -1,7 +1,7 @@
 {
   "name": "runmyprocess-javascript-library",
   "version": "1.0.0",
-  "description": "RunMyProcess JavaScript Library",
+  "description": "This JavaScript library is intended to be used  by RunMyProcess Delivery Team in order to implement standard functions.",
   "directories": {
     "doc": "./doc",
     "test": "./test"
@@ -22,6 +22,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.24.1",
     "chai": "^4.1.0",
+    "del": "^3.0.0",
     "documentation": "^4.0.0-rc.1",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
@@ -39,6 +40,7 @@
     "gulp-mocha": "^4.3.1",
     "gulp-rename": "^1.2.2",
     "gulp-sequence": "^0.4.6",
+    "gulp-template": "^4.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "mocha": "^3.4.2",
@@ -60,6 +62,17 @@
     "type": "git",
     "url": "https://fmartin@gitlab.runmyprocess.com/Delivery/javascript-library.git"
   },
-  "author": "Franck Martin <fmartin@runmyprocess.com>",
+  "homepage": "https://runmyprocess.atlassian.net/wiki/spaces/delivery/pages/29884678/Howto+-+Use+the+JavaScript+library",
+  "bugs": "https://runmyprocess.atlassian.net/secure/RapidBoard.jspa?projectKey=DELJS",
+  "contributors": [
+    {
+      "name": "David Courtaigne",
+      "email": "dcourtaigne@runmyprocess.com"
+    },
+    {
+      "name": "Franck Martin",
+      "email": "fmartin@runmyprocess.com"
+    }
+  ],
   "license": "ISC"
 }
