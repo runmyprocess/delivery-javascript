@@ -2,7 +2,7 @@ import * as date from './mod/date'
 import * as string from './mod/string'
 import * as array from './mod/array'
 import {alert} from './mod/alert'
-import * as chart from './mod/chart'
+// import * as chart from './mod/chart'
 
 export {date, string, array, alert, chart}
 

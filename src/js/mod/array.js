@@ -10,3 +10,9 @@ import some from 'lodash/some'
 export function inArray (collection, predicate) {
   return some(collection, predicate)
 }
+
+export function sumColumn (array-string) {
+  return array-string.reduce(function(accumulator, currentValue) {
+            return accumulator + Number(currentValue)
+        }, 0)
+}
