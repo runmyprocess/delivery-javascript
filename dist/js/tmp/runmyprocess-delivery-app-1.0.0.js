@@ -3712,6 +3712,7 @@ var DELIVERY =
 
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   /* harmony export (immutable) */__webpack_exports__["inArray"] = inArray;
+  /* harmony export (immutable) */__webpack_exports__["sumColumn"] = sumColumn;
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_some__ = __webpack_require__(81);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_some___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_some__);
   // import _ from 'lodash'
@@ -3725,6 +3726,12 @@ var DELIVERY =
    */
   function inArray(collection, predicate) {
     return __WEBPACK_IMPORTED_MODULE_0_lodash_some___default()(collection, predicate);
+  }
+
+  function sumColumn(string) {
+    return string.reduce(function (accumulator, currentValue) {
+      return accumulator + Number(currentValue);
+    }, 0);
   }
 
   /***/
