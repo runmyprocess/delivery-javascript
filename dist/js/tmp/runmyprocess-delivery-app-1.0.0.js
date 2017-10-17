@@ -77,7 +77,7 @@ var DELIVERY =
   /******/__webpack_require__.p = "";
   /******/
   /******/ // Load entry module and return exports
-  /******/return __webpack_require__(__webpack_require__.s = 45);
+  /******/return __webpack_require__(__webpack_require__.s = 46);
   /******/
 }(
 /************************************************************************/
@@ -85,804 +85,7 @@ var DELIVERY =
 /* 0 */
 /***/function (module, exports, __webpack_require__) {
 
-  var freeGlobal = __webpack_require__(26);
-
-  /** Detect free variable `self`. */
-  var freeSelf = (typeof self === 'undefined' ? 'undefined' : _typeof(self)) == 'object' && self && self.Object === Object && self;
-
-  /** Used as a reference to the global object. */
-  var root = freeGlobal || freeSelf || Function('return this')();
-
-  module.exports = root;
-
-  /***/
-},
-/* 1 */
-/***/function (module, exports) {
-
-  /**
-   * Checks if `value` is classified as an `Array` object.
-   *
-   * @static
-   * @memberOf _
-   * @since 0.1.0
-   * @category Lang
-   * @param {*} value The value to check.
-   * @returns {boolean} Returns `true` if `value` is an array, else `false`.
-   * @example
-   *
-   * _.isArray([1, 2, 3]);
-   * // => true
-   *
-   * _.isArray(document.body.children);
-   * // => false
-   *
-   * _.isArray('abc');
-   * // => false
-   *
-   * _.isArray(_.noop);
-   * // => false
-   */
-  var isArray = Array.isArray;
-
-  module.exports = isArray;
-
-  /***/
-},
-/* 2 */
-/***/function (module, exports, __webpack_require__) {
-
-  var baseIsNative = __webpack_require__(97),
-      getValue = __webpack_require__(100);
-
-  /**
-   * Gets the native function at `key` of `object`.
-   *
-   * @private
-   * @param {Object} object The object to query.
-   * @param {string} key The key of the method to get.
-   * @returns {*} Returns the function if it's native, else `undefined`.
-   */
-  function getNative(object, key) {
-    var value = getValue(object, key);
-    return baseIsNative(value) ? value : undefined;
-  }
-
-  module.exports = getNative;
-
-  /***/
-},
-/* 3 */
-/***/function (module, exports, __webpack_require__) {
-
-  var baseToString = __webpack_require__(54);
-
-  /**
-   * Converts `value` to a string. An empty string is returned for `null`
-   * and `undefined` values. The sign of `-0` is preserved.
-   *
-   * @static
-   * @memberOf _
-   * @since 4.0.0
-   * @category Lang
-   * @param {*} value The value to convert.
-   * @returns {string} Returns the converted string.
-   * @example
-   *
-   * _.toString(null);
-   * // => ''
-   *
-   * _.toString(-0);
-   * // => '-0'
-   *
-   * _.toString([1, 2, 3]);
-   * // => '1,2,3'
-   */
-  function toString(value) {
-    return value == null ? '' : baseToString(value);
-  }
-
-  module.exports = toString;
-
-  /***/
-},
-/* 4 */
-/***/function (module, exports, __webpack_require__) {
-
-  var _Symbol = __webpack_require__(7),
-      getRawTag = __webpack_require__(57),
-      objectToString = __webpack_require__(58);
-
-  /** `Object#toString` result references. */
-  var nullTag = '[object Null]',
-      undefinedTag = '[object Undefined]';
-
-  /** Built-in value references. */
-  var symToStringTag = _Symbol ? _Symbol.toStringTag : undefined;
-
-  /**
-   * The base implementation of `getTag` without fallbacks for buggy environments.
-   *
-   * @private
-   * @param {*} value The value to query.
-   * @returns {string} Returns the `toStringTag`.
-   */
-  function baseGetTag(value) {
-    if (value == null) {
-      return value === undefined ? undefinedTag : nullTag;
-    }
-    return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
-  }
-
-  module.exports = baseGetTag;
-
-  /***/
-},
-/* 5 */
-/***/function (module, exports) {
-
-  /**
-   * Checks if `value` is object-like. A value is object-like if it's not `null`
-   * and has a `typeof` result of "object".
-   *
-   * @static
-   * @memberOf _
-   * @since 4.0.0
-   * @category Lang
-   * @param {*} value The value to check.
-   * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-   * @example
-   *
-   * _.isObjectLike({});
-   * // => true
-   *
-   * _.isObjectLike([1, 2, 3]);
-   * // => true
-   *
-   * _.isObjectLike(_.noop);
-   * // => false
-   *
-   * _.isObjectLike(null);
-   * // => false
-   */
-  function isObjectLike(value) {
-    return value != null && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) == 'object';
-  }
-
-  module.exports = isObjectLike;
-
-  /***/
-},
-/* 6 */
-/***/function (module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  var hasClass = function hasClass(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-  };
-
-  var addClass = function addClass(elem, className) {
-    if (!hasClass(elem, className)) {
-      elem.className += ' ' + className;
-    }
-  };
-
-  var removeClass = function removeClass(elem, className) {
-    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-    if (hasClass(elem, className)) {
-      while (newClass.indexOf(' ' + className + ' ') >= 0) {
-        newClass = newClass.replace(' ' + className + ' ', ' ');
-      }
-      elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-  };
-
-  var escapeHtml = function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
-  var _show = function _show(elem) {
-    elem.style.opacity = '';
-    elem.style.display = 'block';
-  };
-
-  var show = function show(elems) {
-    if (elems && !elems.length) {
-      return _show(elems);
-    }
-    for (var i = 0; i < elems.length; ++i) {
-      _show(elems[i]);
-    }
-  };
-
-  var _hide = function _hide(elem) {
-    elem.style.opacity = '';
-    elem.style.display = 'none';
-  };
-
-  var hide = function hide(elems) {
-    if (elems && !elems.length) {
-      return _hide(elems);
-    }
-    for (var i = 0; i < elems.length; ++i) {
-      _hide(elems[i]);
-    }
-  };
-
-  var isDescendant = function isDescendant(parent, child) {
-    var node = child.parentNode;
-    while (node !== null) {
-      if (node === parent) {
-        return true;
-      }
-      node = node.parentNode;
-    }
-    return false;
-  };
-
-  var getTopMargin = function getTopMargin(elem) {
-    elem.style.left = '-9999px';
-    elem.style.display = 'block';
-
-    var height = elem.clientHeight,
-        padding;
-    if (typeof getComputedStyle !== 'undefined') {
-      // IE 8
-      padding = parseInt(getComputedStyle(elem).getPropertyValue('padding-top'), 10);
-    } else {
-      padding = parseInt(elem.currentStyle.padding);
-    }
-
-    elem.style.left = '';
-    elem.style.display = 'none';
-    return '-' + parseInt((height + padding) / 2) + 'px';
-  };
-
-  var fadeIn = function fadeIn(elem, interval) {
-    if (+elem.style.opacity < 1) {
-      interval = interval || 16;
-      elem.style.opacity = 0;
-      elem.style.display = 'block';
-      var last = +new Date();
-      var tick = function (_tick) {
-        function tick() {
-          return _tick.apply(this, arguments);
-        }
-
-        tick.toString = function () {
-          return _tick.toString();
-        };
-
-        return tick;
-      }(function () {
-        elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
-        last = +new Date();
-
-        if (+elem.style.opacity < 1) {
-          setTimeout(tick, interval);
-        }
-      });
-      tick();
-    }
-    elem.style.display = 'block'; //fallback IE8
-  };
-
-  var fadeOut = function fadeOut(elem, interval) {
-    interval = interval || 16;
-    elem.style.opacity = 1;
-    var last = +new Date();
-    var tick = function (_tick2) {
-      function tick() {
-        return _tick2.apply(this, arguments);
-      }
-
-      tick.toString = function () {
-        return _tick2.toString();
-      };
-
-      return tick;
-    }(function () {
-      elem.style.opacity = +elem.style.opacity - (new Date() - last) / 100;
-      last = +new Date();
-
-      if (+elem.style.opacity > 0) {
-        setTimeout(tick, interval);
-      } else {
-        elem.style.display = 'none';
-      }
-    });
-    tick();
-  };
-
-  var fireClick = function fireClick(node) {
-    // Taken from http://www.nonobtrusive.com/2011/11/29/programatically-fire-crossbrowser-click-event-with-javascript/
-    // Then fixed for today's Chrome browser.
-    if (typeof MouseEvent === 'function') {
-      // Up-to-date approach
-      var mevt = new MouseEvent('click', {
-        view: window,
-        bubbles: false,
-        cancelable: true
-      });
-      node.dispatchEvent(mevt);
-    } else if (document.createEvent) {
-      // Fallback
-      var evt = document.createEvent('MouseEvents');
-      evt.initEvent('click', false, false);
-      node.dispatchEvent(evt);
-    } else if (document.createEventObject) {
-      node.fireEvent('onclick');
-    } else if (typeof node.onclick === 'function') {
-      node.onclick();
-    }
-  };
-
-  var stopEventPropagation = function stopEventPropagation(e) {
-    // In particular, make sure the space bar doesn't scroll the main window.
-    if (typeof e.stopPropagation === 'function') {
-      e.stopPropagation();
-      e.preventDefault();
-    } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
-      window.event.cancelBubble = true;
-    }
-  };
-
-  exports.hasClass = hasClass;
-  exports.addClass = addClass;
-  exports.removeClass = removeClass;
-  exports.escapeHtml = escapeHtml;
-  exports._show = _show;
-  exports.show = show;
-  exports._hide = _hide;
-  exports.hide = hide;
-  exports.isDescendant = isDescendant;
-  exports.getTopMargin = getTopMargin;
-  exports.fadeIn = fadeIn;
-  exports.fadeOut = fadeOut;
-  exports.fireClick = fireClick;
-  exports.stopEventPropagation = stopEventPropagation;
-
-  /***/
-},
-/* 7 */
-/***/function (module, exports, __webpack_require__) {
-
-  var root = __webpack_require__(0);
-
-  /** Built-in value references. */
-  var _Symbol2 = root.Symbol;
-
-  module.exports = _Symbol2;
-
-  /***/
-},
-/* 8 */
-/***/function (module, exports, __webpack_require__) {
-
-  var listCacheClear = __webpack_require__(87),
-      listCacheDelete = __webpack_require__(88),
-      listCacheGet = __webpack_require__(89),
-      listCacheHas = __webpack_require__(90),
-      listCacheSet = __webpack_require__(91);
-
-  /**
-   * Creates an list cache object.
-   *
-   * @private
-   * @constructor
-   * @param {Array} [entries] The key-value pairs to cache.
-   */
-  function ListCache(entries) {
-    var index = -1,
-        length = entries == null ? 0 : entries.length;
-
-    this.clear();
-    while (++index < length) {
-      var entry = entries[index];
-      this.set(entry[0], entry[1]);
-    }
-  }
-
-  // Add methods to `ListCache`.
-  ListCache.prototype.clear = listCacheClear;
-  ListCache.prototype['delete'] = listCacheDelete;
-  ListCache.prototype.get = listCacheGet;
-  ListCache.prototype.has = listCacheHas;
-  ListCache.prototype.set = listCacheSet;
-
-  module.exports = ListCache;
-
-  /***/
-},
-/* 9 */
-/***/function (module, exports, __webpack_require__) {
-
-  var eq = __webpack_require__(18);
-
-  /**
-   * Gets the index at which the `key` is found in `array` of key-value pairs.
-   *
-   * @private
-   * @param {Array} array The array to inspect.
-   * @param {*} key The key to search for.
-   * @returns {number} Returns the index of the matched value, else `-1`.
-   */
-  function assocIndexOf(array, key) {
-    var length = array.length;
-    while (length--) {
-      if (eq(array[length][0], key)) {
-        return length;
-      }
-    }
-    return -1;
-  }
-
-  module.exports = assocIndexOf;
-
-  /***/
-},
-/* 10 */
-/***/function (module, exports) {
-
-  /**
-   * Checks if `value` is the
-   * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
-   * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-   *
-   * @static
-   * @memberOf _
-   * @since 0.1.0
-   * @category Lang
-   * @param {*} value The value to check.
-   * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-   * @example
-   *
-   * _.isObject({});
-   * // => true
-   *
-   * _.isObject([1, 2, 3]);
-   * // => true
-   *
-   * _.isObject(_.noop);
-   * // => true
-   *
-   * _.isObject(null);
-   * // => false
-   */
-  function isObject(value) {
-    var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
-    return value != null && (type == 'object' || type == 'function');
-  }
-
-  module.exports = isObject;
-
-  /***/
-},
-/* 11 */
-/***/function (module, exports, __webpack_require__) {
-
-  var getNative = __webpack_require__(2);
-
-  /* Built-in method references that are verified to be native. */
-  var nativeCreate = getNative(Object, 'create');
-
-  module.exports = nativeCreate;
-
-  /***/
-},
-/* 12 */
-/***/function (module, exports, __webpack_require__) {
-
-  var isKeyable = __webpack_require__(109);
-
-  /**
-   * Gets the data for `map`.
-   *
-   * @private
-   * @param {Object} map The map to query.
-   * @param {string} key The reference key.
-   * @returns {*} Returns the map data.
-   */
-  function getMapData(map, key) {
-    var data = map.__data__;
-    return isKeyable(key) ? data[typeof key == 'string' ? 'string' : 'hash'] : data.map;
-  }
-
-  module.exports = getMapData;
-
-  /***/
-},
-/* 13 */
-/***/function (module, exports, __webpack_require__) {
-
-  var isSymbol = __webpack_require__(17);
-
-  /** Used as references for various `Number` constants. */
-  var INFINITY = 1 / 0;
-
-  /**
-   * Converts `value` to a string key if it's not a string or symbol.
-   *
-   * @private
-   * @param {*} value The value to inspect.
-   * @returns {string|symbol} Returns the key.
-   */
-  function toKey(value) {
-    if (typeof value == 'string' || isSymbol(value)) {
-      return value;
-    }
-    var result = value + '';
-    return result == '0' && 1 / value == -INFINITY ? '-0' : result;
-  }
-
-  module.exports = toKey;
-
-  /***/
-},
-/* 14 */
-/***/function (module, exports, __webpack_require__) {
-
-  "use strict";
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  /*
-   * Allow user to pass their own params
-   */
-  var extend = function extend(a, b) {
-    for (var key in b) {
-      if (b.hasOwnProperty(key)) {
-        a[key] = b[key];
-      }
-    }
-    return a;
-  };
-
-  /*
-   * Convert HEX codes to RGB values (#000000 -> rgb(0,0,0))
-   */
-  var hexToRgb = function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? parseInt(result[1], 16) + ', ' + parseInt(result[2], 16) + ', ' + parseInt(result[3], 16) : null;
-  };
-
-  /*
-   * Check if the user is using Internet Explorer 8 (for fallbacks)
-   */
-  var isIE8 = function isIE8() {
-    return window.attachEvent && !window.addEventListener;
-  };
-
-  /*
-   * IE compatible logging for developers
-   */
-  var logStr = function logStr(string) {
-    if (window.console) {
-      // IE...
-      window.console.log('SweetAlert: ' + string);
-    }
-  };
-
-  /*
-   * Set hover, active and focus-states for buttons 
-   * (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
-   */
-  var colorLuminance = function colorLuminance(hex, lum) {
-    // Validate hex string
-    hex = String(hex).replace(/[^0-9a-f]/gi, '');
-    if (hex.length < 6) {
-      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-    }
-    lum = lum || 0;
-
-    // Convert to decimal and change luminosity
-    var rgb = '#';
-    var c;
-    var i;
-
-    for (i = 0; i < 3; i++) {
-      c = parseInt(hex.substr(i * 2, 2), 16);
-      c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
-      rgb += ('00' + c).substr(c.length);
-    }
-
-    return rgb;
-  };
-
-  exports.extend = extend;
-  exports.hexToRgb = hexToRgb;
-  exports.isIE8 = isIE8;
-  exports.logStr = logStr;
-  exports.colorLuminance = colorLuminance;
-
-  /***/
-},
-/* 15 */
-/***/function (module, exports, __webpack_require__) {
-
-  "use strict";
-
-  var _interopRequireWildcard = function _interopRequireWildcard(obj) {
-    return obj && obj.__esModule ? obj : { 'default': obj };
-  };
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-
-  var _hexToRgb = __webpack_require__(14);
-
-  var _removeClass$getTopMargin$fadeIn$show$addClass = __webpack_require__(6);
-
-  var _defaultParams = __webpack_require__(44);
-
-  var _defaultParams2 = _interopRequireWildcard(_defaultParams);
-
-  /*
-   * Add modal + overlay to DOM
-   */
-
-  var _injectedHTML = __webpack_require__(167);
-
-  var _injectedHTML2 = _interopRequireWildcard(_injectedHTML);
-
-  var modalClass = '.sweet-alert';
-  var overlayClass = '.sweet-overlay';
-
-  var sweetAlertInitialize = function sweetAlertInitialize() {
-    var sweetWrap = document.createElement('div');
-    sweetWrap.innerHTML = _injectedHTML2['default'];
-
-    // Append elements to body
-    while (sweetWrap.firstChild) {
-      document.body.appendChild(sweetWrap.firstChild);
-    }
-  };
-
-  /*
-   * Get DOM element of modal
-   */
-  var getModal = function (_getModal) {
-    function getModal() {
-      return _getModal.apply(this, arguments);
-    }
-
-    getModal.toString = function () {
-      return _getModal.toString();
-    };
-
-    return getModal;
-  }(function () {
-    var $modal = document.querySelector(modalClass);
-
-    if (!$modal) {
-      sweetAlertInitialize();
-      $modal = getModal();
-    }
-
-    return $modal;
-  });
-
-  /*
-   * Get DOM element of input (in modal)
-   */
-  var getInput = function getInput() {
-    var $modal = getModal();
-    if ($modal) {
-      return $modal.querySelector('input');
-    }
-  };
-
-  /*
-   * Get DOM element of overlay
-   */
-  var getOverlay = function getOverlay() {
-    return document.querySelector(overlayClass);
-  };
-
-  /*
-   * Add box-shadow style to button (depending on its chosen bg-color)
-   */
-  var setFocusStyle = function setFocusStyle($button, bgColor) {
-    var rgbColor = _hexToRgb.hexToRgb(bgColor);
-    $button.style.boxShadow = '0 0 2px rgba(' + rgbColor + ', 0.8), inset 0 0 0 1px rgba(0, 0, 0, 0.05)';
-  };
-
-  /*
-   * Animation when opening modal
-   */
-  var openModal = function openModal(callback) {
-    var $modal = getModal();
-    _removeClass$getTopMargin$fadeIn$show$addClass.fadeIn(getOverlay(), 10);
-    _removeClass$getTopMargin$fadeIn$show$addClass.show($modal);
-    _removeClass$getTopMargin$fadeIn$show$addClass.addClass($modal, 'showSweetAlert');
-    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($modal, 'hideSweetAlert');
-
-    window.previousActiveElement = document.activeElement;
-    var $okButton = $modal.querySelector('button.confirm');
-    $okButton.focus();
-
-    setTimeout(function () {
-      _removeClass$getTopMargin$fadeIn$show$addClass.addClass($modal, 'visible');
-    }, 500);
-
-    var timer = $modal.getAttribute('data-timer');
-
-    if (timer !== 'null' && timer !== '') {
-      var timerCallback = callback;
-      $modal.timeout = setTimeout(function () {
-        var doneFunctionExists = (timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true';
-        if (doneFunctionExists) {
-          timerCallback(null);
-        } else {
-          sweetAlert.close();
-        }
-      }, timer);
-    }
-  };
-
-  /*
-   * Reset the styling of the input
-   * (for example if errors have been shown)
-   */
-  var resetInput = function resetInput() {
-    var $modal = getModal();
-    var $input = getInput();
-
-    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($modal, 'show-input');
-    $input.value = _defaultParams2['default'].inputValue;
-    $input.setAttribute('type', _defaultParams2['default'].inputType);
-    $input.setAttribute('placeholder', _defaultParams2['default'].inputPlaceholder);
-
-    resetInputError();
-  };
-
-  var resetInputError = function resetInputError(event) {
-    // If press enter => ignore
-    if (event && event.keyCode === 13) {
-      return false;
-    }
-
-    var $modal = getModal();
-
-    var $errorIcon = $modal.querySelector('.sa-input-error');
-    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($errorIcon, 'show');
-
-    var $errorContainer = $modal.querySelector('.sa-error-container');
-    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($errorContainer, 'show');
-  };
-
-  /*
-   * Set "margin-top"-property on modal based on its computed height
-   */
-  var fixVerticalPosition = function fixVerticalPosition() {
-    var $modal = getModal();
-    $modal.style.marginTop = _removeClass$getTopMargin$fadeIn$show$addClass.getTopMargin(getModal());
-  };
-
-  exports.sweetAlertInitialize = sweetAlertInitialize;
-  exports.getModal = getModal;
-  exports.getOverlay = getOverlay;
-  exports.getInput = getInput;
-  exports.setFocusStyle = setFocusStyle;
-  exports.openModal = openModal;
-  exports.resetInput = resetInput;
-  exports.resetInputError = resetInputError;
-  exports.fixVerticalPosition = fixVerticalPosition;
-
-  /***/
-},
-/* 16 */
-/***/function (module, exports, __webpack_require__) {
-
-  var isDate = __webpack_require__(48);
+  var isDate = __webpack_require__(52);
 
   var MILLISECONDS_IN_HOUR = 3600000;
   var MILLISECONDS_IN_MINUTE = 60000;
@@ -1200,11 +403,808 @@ var DELIVERY =
 
   /***/
 },
+/* 1 */
+/***/function (module, exports, __webpack_require__) {
+
+  var freeGlobal = __webpack_require__(27);
+
+  /** Detect free variable `self`. */
+  var freeSelf = (typeof self === 'undefined' ? 'undefined' : _typeof(self)) == 'object' && self && self.Object === Object && self;
+
+  /** Used as a reference to the global object. */
+  var root = freeGlobal || freeSelf || Function('return this')();
+
+  module.exports = root;
+
+  /***/
+},
+/* 2 */
+/***/function (module, exports) {
+
+  /**
+   * Checks if `value` is classified as an `Array` object.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+   * @example
+   *
+   * _.isArray([1, 2, 3]);
+   * // => true
+   *
+   * _.isArray(document.body.children);
+   * // => false
+   *
+   * _.isArray('abc');
+   * // => false
+   *
+   * _.isArray(_.noop);
+   * // => false
+   */
+  var isArray = Array.isArray;
+
+  module.exports = isArray;
+
+  /***/
+},
+/* 3 */
+/***/function (module, exports, __webpack_require__) {
+
+  var baseIsNative = __webpack_require__(111),
+      getValue = __webpack_require__(114);
+
+  /**
+   * Gets the native function at `key` of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @param {string} key The key of the method to get.
+   * @returns {*} Returns the function if it's native, else `undefined`.
+   */
+  function getNative(object, key) {
+    var value = getValue(object, key);
+    return baseIsNative(value) ? value : undefined;
+  }
+
+  module.exports = getNative;
+
+  /***/
+},
+/* 4 */
+/***/function (module, exports, __webpack_require__) {
+
+  var baseToString = __webpack_require__(68);
+
+  /**
+   * Converts `value` to a string. An empty string is returned for `null`
+   * and `undefined` values. The sign of `-0` is preserved.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to convert.
+   * @returns {string} Returns the converted string.
+   * @example
+   *
+   * _.toString(null);
+   * // => ''
+   *
+   * _.toString(-0);
+   * // => '-0'
+   *
+   * _.toString([1, 2, 3]);
+   * // => '1,2,3'
+   */
+  function toString(value) {
+    return value == null ? '' : baseToString(value);
+  }
+
+  module.exports = toString;
+
+  /***/
+},
+/* 5 */
+/***/function (module, exports, __webpack_require__) {
+
+  var _Symbol = __webpack_require__(8),
+      getRawTag = __webpack_require__(71),
+      objectToString = __webpack_require__(72);
+
+  /** `Object#toString` result references. */
+  var nullTag = '[object Null]',
+      undefinedTag = '[object Undefined]';
+
+  /** Built-in value references. */
+  var symToStringTag = _Symbol ? _Symbol.toStringTag : undefined;
+
+  /**
+   * The base implementation of `getTag` without fallbacks for buggy environments.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @returns {string} Returns the `toStringTag`.
+   */
+  function baseGetTag(value) {
+    if (value == null) {
+      return value === undefined ? undefinedTag : nullTag;
+    }
+    return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
+  }
+
+  module.exports = baseGetTag;
+
+  /***/
+},
+/* 6 */
+/***/function (module, exports) {
+
+  /**
+   * Checks if `value` is object-like. A value is object-like if it's not `null`
+   * and has a `typeof` result of "object".
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+   * @example
+   *
+   * _.isObjectLike({});
+   * // => true
+   *
+   * _.isObjectLike([1, 2, 3]);
+   * // => true
+   *
+   * _.isObjectLike(_.noop);
+   * // => false
+   *
+   * _.isObjectLike(null);
+   * // => false
+   */
+  function isObjectLike(value) {
+    return value != null && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) == 'object';
+  }
+
+  module.exports = isObjectLike;
+
+  /***/
+},
+/* 7 */
+/***/function (module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+  var hasClass = function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  };
+
+  var addClass = function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+      elem.className += ' ' + className;
+    }
+  };
+
+  var removeClass = function removeClass(elem, className) {
+    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+    if (hasClass(elem, className)) {
+      while (newClass.indexOf(' ' + className + ' ') >= 0) {
+        newClass = newClass.replace(' ' + className + ' ', ' ');
+      }
+      elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+  };
+
+  var escapeHtml = function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  var _show = function _show(elem) {
+    elem.style.opacity = '';
+    elem.style.display = 'block';
+  };
+
+  var show = function show(elems) {
+    if (elems && !elems.length) {
+      return _show(elems);
+    }
+    for (var i = 0; i < elems.length; ++i) {
+      _show(elems[i]);
+    }
+  };
+
+  var _hide = function _hide(elem) {
+    elem.style.opacity = '';
+    elem.style.display = 'none';
+  };
+
+  var hide = function hide(elems) {
+    if (elems && !elems.length) {
+      return _hide(elems);
+    }
+    for (var i = 0; i < elems.length; ++i) {
+      _hide(elems[i]);
+    }
+  };
+
+  var isDescendant = function isDescendant(parent, child) {
+    var node = child.parentNode;
+    while (node !== null) {
+      if (node === parent) {
+        return true;
+      }
+      node = node.parentNode;
+    }
+    return false;
+  };
+
+  var getTopMargin = function getTopMargin(elem) {
+    elem.style.left = '-9999px';
+    elem.style.display = 'block';
+
+    var height = elem.clientHeight,
+        padding;
+    if (typeof getComputedStyle !== 'undefined') {
+      // IE 8
+      padding = parseInt(getComputedStyle(elem).getPropertyValue('padding-top'), 10);
+    } else {
+      padding = parseInt(elem.currentStyle.padding);
+    }
+
+    elem.style.left = '';
+    elem.style.display = 'none';
+    return '-' + parseInt((height + padding) / 2) + 'px';
+  };
+
+  var fadeIn = function fadeIn(elem, interval) {
+    if (+elem.style.opacity < 1) {
+      interval = interval || 16;
+      elem.style.opacity = 0;
+      elem.style.display = 'block';
+      var last = +new Date();
+      var tick = function (_tick) {
+        function tick() {
+          return _tick.apply(this, arguments);
+        }
+
+        tick.toString = function () {
+          return _tick.toString();
+        };
+
+        return tick;
+      }(function () {
+        elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
+        last = +new Date();
+
+        if (+elem.style.opacity < 1) {
+          setTimeout(tick, interval);
+        }
+      });
+      tick();
+    }
+    elem.style.display = 'block'; //fallback IE8
+  };
+
+  var fadeOut = function fadeOut(elem, interval) {
+    interval = interval || 16;
+    elem.style.opacity = 1;
+    var last = +new Date();
+    var tick = function (_tick2) {
+      function tick() {
+        return _tick2.apply(this, arguments);
+      }
+
+      tick.toString = function () {
+        return _tick2.toString();
+      };
+
+      return tick;
+    }(function () {
+      elem.style.opacity = +elem.style.opacity - (new Date() - last) / 100;
+      last = +new Date();
+
+      if (+elem.style.opacity > 0) {
+        setTimeout(tick, interval);
+      } else {
+        elem.style.display = 'none';
+      }
+    });
+    tick();
+  };
+
+  var fireClick = function fireClick(node) {
+    // Taken from http://www.nonobtrusive.com/2011/11/29/programatically-fire-crossbrowser-click-event-with-javascript/
+    // Then fixed for today's Chrome browser.
+    if (typeof MouseEvent === 'function') {
+      // Up-to-date approach
+      var mevt = new MouseEvent('click', {
+        view: window,
+        bubbles: false,
+        cancelable: true
+      });
+      node.dispatchEvent(mevt);
+    } else if (document.createEvent) {
+      // Fallback
+      var evt = document.createEvent('MouseEvents');
+      evt.initEvent('click', false, false);
+      node.dispatchEvent(evt);
+    } else if (document.createEventObject) {
+      node.fireEvent('onclick');
+    } else if (typeof node.onclick === 'function') {
+      node.onclick();
+    }
+  };
+
+  var stopEventPropagation = function stopEventPropagation(e) {
+    // In particular, make sure the space bar doesn't scroll the main window.
+    if (typeof e.stopPropagation === 'function') {
+      e.stopPropagation();
+      e.preventDefault();
+    } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
+      window.event.cancelBubble = true;
+    }
+  };
+
+  exports.hasClass = hasClass;
+  exports.addClass = addClass;
+  exports.removeClass = removeClass;
+  exports.escapeHtml = escapeHtml;
+  exports._show = _show;
+  exports.show = show;
+  exports._hide = _hide;
+  exports.hide = hide;
+  exports.isDescendant = isDescendant;
+  exports.getTopMargin = getTopMargin;
+  exports.fadeIn = fadeIn;
+  exports.fadeOut = fadeOut;
+  exports.fireClick = fireClick;
+  exports.stopEventPropagation = stopEventPropagation;
+
+  /***/
+},
+/* 8 */
+/***/function (module, exports, __webpack_require__) {
+
+  var root = __webpack_require__(1);
+
+  /** Built-in value references. */
+  var _Symbol2 = root.Symbol;
+
+  module.exports = _Symbol2;
+
+  /***/
+},
+/* 9 */
+/***/function (module, exports, __webpack_require__) {
+
+  var listCacheClear = __webpack_require__(101),
+      listCacheDelete = __webpack_require__(102),
+      listCacheGet = __webpack_require__(103),
+      listCacheHas = __webpack_require__(104),
+      listCacheSet = __webpack_require__(105);
+
+  /**
+   * Creates an list cache object.
+   *
+   * @private
+   * @constructor
+   * @param {Array} [entries] The key-value pairs to cache.
+   */
+  function ListCache(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+
+    this.clear();
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  // Add methods to `ListCache`.
+  ListCache.prototype.clear = listCacheClear;
+  ListCache.prototype['delete'] = listCacheDelete;
+  ListCache.prototype.get = listCacheGet;
+  ListCache.prototype.has = listCacheHas;
+  ListCache.prototype.set = listCacheSet;
+
+  module.exports = ListCache;
+
+  /***/
+},
+/* 10 */
+/***/function (module, exports, __webpack_require__) {
+
+  var eq = __webpack_require__(18);
+
+  /**
+   * Gets the index at which the `key` is found in `array` of key-value pairs.
+   *
+   * @private
+   * @param {Array} array The array to inspect.
+   * @param {*} key The key to search for.
+   * @returns {number} Returns the index of the matched value, else `-1`.
+   */
+  function assocIndexOf(array, key) {
+    var length = array.length;
+    while (length--) {
+      if (eq(array[length][0], key)) {
+        return length;
+      }
+    }
+    return -1;
+  }
+
+  module.exports = assocIndexOf;
+
+  /***/
+},
+/* 11 */
+/***/function (module, exports) {
+
+  /**
+   * Checks if `value` is the
+   * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+   * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+   * @example
+   *
+   * _.isObject({});
+   * // => true
+   *
+   * _.isObject([1, 2, 3]);
+   * // => true
+   *
+   * _.isObject(_.noop);
+   * // => true
+   *
+   * _.isObject(null);
+   * // => false
+   */
+  function isObject(value) {
+    var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
+    return value != null && (type == 'object' || type == 'function');
+  }
+
+  module.exports = isObject;
+
+  /***/
+},
+/* 12 */
+/***/function (module, exports, __webpack_require__) {
+
+  var getNative = __webpack_require__(3);
+
+  /* Built-in method references that are verified to be native. */
+  var nativeCreate = getNative(Object, 'create');
+
+  module.exports = nativeCreate;
+
+  /***/
+},
+/* 13 */
+/***/function (module, exports, __webpack_require__) {
+
+  var isKeyable = __webpack_require__(123);
+
+  /**
+   * Gets the data for `map`.
+   *
+   * @private
+   * @param {Object} map The map to query.
+   * @param {string} key The reference key.
+   * @returns {*} Returns the map data.
+   */
+  function getMapData(map, key) {
+    var data = map.__data__;
+    return isKeyable(key) ? data[typeof key == 'string' ? 'string' : 'hash'] : data.map;
+  }
+
+  module.exports = getMapData;
+
+  /***/
+},
+/* 14 */
+/***/function (module, exports, __webpack_require__) {
+
+  var isSymbol = __webpack_require__(17);
+
+  /** Used as references for various `Number` constants. */
+  var INFINITY = 1 / 0;
+
+  /**
+   * Converts `value` to a string key if it's not a string or symbol.
+   *
+   * @private
+   * @param {*} value The value to inspect.
+   * @returns {string|symbol} Returns the key.
+   */
+  function toKey(value) {
+    if (typeof value == 'string' || isSymbol(value)) {
+      return value;
+    }
+    var result = value + '';
+    return result == '0' && 1 / value == -INFINITY ? '-0' : result;
+  }
+
+  module.exports = toKey;
+
+  /***/
+},
+/* 15 */
+/***/function (module, exports, __webpack_require__) {
+
+  "use strict";
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+  /*
+   * Allow user to pass their own params
+   */
+  var extend = function extend(a, b) {
+    for (var key in b) {
+      if (b.hasOwnProperty(key)) {
+        a[key] = b[key];
+      }
+    }
+    return a;
+  };
+
+  /*
+   * Convert HEX codes to RGB values (#000000 -> rgb(0,0,0))
+   */
+  var hexToRgb = function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? parseInt(result[1], 16) + ', ' + parseInt(result[2], 16) + ', ' + parseInt(result[3], 16) : null;
+  };
+
+  /*
+   * Check if the user is using Internet Explorer 8 (for fallbacks)
+   */
+  var isIE8 = function isIE8() {
+    return window.attachEvent && !window.addEventListener;
+  };
+
+  /*
+   * IE compatible logging for developers
+   */
+  var logStr = function logStr(string) {
+    if (window.console) {
+      // IE...
+      window.console.log('SweetAlert: ' + string);
+    }
+  };
+
+  /*
+   * Set hover, active and focus-states for buttons 
+   * (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
+   */
+  var colorLuminance = function colorLuminance(hex, lum) {
+    // Validate hex string
+    hex = String(hex).replace(/[^0-9a-f]/gi, '');
+    if (hex.length < 6) {
+      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    lum = lum || 0;
+
+    // Convert to decimal and change luminosity
+    var rgb = '#';
+    var c;
+    var i;
+
+    for (i = 0; i < 3; i++) {
+      c = parseInt(hex.substr(i * 2, 2), 16);
+      c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
+      rgb += ('00' + c).substr(c.length);
+    }
+
+    return rgb;
+  };
+
+  exports.extend = extend;
+  exports.hexToRgb = hexToRgb;
+  exports.isIE8 = isIE8;
+  exports.logStr = logStr;
+  exports.colorLuminance = colorLuminance;
+
+  /***/
+},
+/* 16 */
+/***/function (module, exports, __webpack_require__) {
+
+  "use strict";
+
+  var _interopRequireWildcard = function _interopRequireWildcard(obj) {
+    return obj && obj.__esModule ? obj : { 'default': obj };
+  };
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  var _hexToRgb = __webpack_require__(15);
+
+  var _removeClass$getTopMargin$fadeIn$show$addClass = __webpack_require__(7);
+
+  var _defaultParams = __webpack_require__(45);
+
+  var _defaultParams2 = _interopRequireWildcard(_defaultParams);
+
+  /*
+   * Add modal + overlay to DOM
+   */
+
+  var _injectedHTML = __webpack_require__(181);
+
+  var _injectedHTML2 = _interopRequireWildcard(_injectedHTML);
+
+  var modalClass = '.sweet-alert';
+  var overlayClass = '.sweet-overlay';
+
+  var sweetAlertInitialize = function sweetAlertInitialize() {
+    var sweetWrap = document.createElement('div');
+    sweetWrap.innerHTML = _injectedHTML2['default'];
+
+    // Append elements to body
+    while (sweetWrap.firstChild) {
+      document.body.appendChild(sweetWrap.firstChild);
+    }
+  };
+
+  /*
+   * Get DOM element of modal
+   */
+  var getModal = function (_getModal) {
+    function getModal() {
+      return _getModal.apply(this, arguments);
+    }
+
+    getModal.toString = function () {
+      return _getModal.toString();
+    };
+
+    return getModal;
+  }(function () {
+    var $modal = document.querySelector(modalClass);
+
+    if (!$modal) {
+      sweetAlertInitialize();
+      $modal = getModal();
+    }
+
+    return $modal;
+  });
+
+  /*
+   * Get DOM element of input (in modal)
+   */
+  var getInput = function getInput() {
+    var $modal = getModal();
+    if ($modal) {
+      return $modal.querySelector('input');
+    }
+  };
+
+  /*
+   * Get DOM element of overlay
+   */
+  var getOverlay = function getOverlay() {
+    return document.querySelector(overlayClass);
+  };
+
+  /*
+   * Add box-shadow style to button (depending on its chosen bg-color)
+   */
+  var setFocusStyle = function setFocusStyle($button, bgColor) {
+    var rgbColor = _hexToRgb.hexToRgb(bgColor);
+    $button.style.boxShadow = '0 0 2px rgba(' + rgbColor + ', 0.8), inset 0 0 0 1px rgba(0, 0, 0, 0.05)';
+  };
+
+  /*
+   * Animation when opening modal
+   */
+  var openModal = function openModal(callback) {
+    var $modal = getModal();
+    _removeClass$getTopMargin$fadeIn$show$addClass.fadeIn(getOverlay(), 10);
+    _removeClass$getTopMargin$fadeIn$show$addClass.show($modal);
+    _removeClass$getTopMargin$fadeIn$show$addClass.addClass($modal, 'showSweetAlert');
+    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($modal, 'hideSweetAlert');
+
+    window.previousActiveElement = document.activeElement;
+    var $okButton = $modal.querySelector('button.confirm');
+    $okButton.focus();
+
+    setTimeout(function () {
+      _removeClass$getTopMargin$fadeIn$show$addClass.addClass($modal, 'visible');
+    }, 500);
+
+    var timer = $modal.getAttribute('data-timer');
+
+    if (timer !== 'null' && timer !== '') {
+      var timerCallback = callback;
+      $modal.timeout = setTimeout(function () {
+        var doneFunctionExists = (timerCallback || null) && $modal.getAttribute('data-has-done-function') === 'true';
+        if (doneFunctionExists) {
+          timerCallback(null);
+        } else {
+          sweetAlert.close();
+        }
+      }, timer);
+    }
+  };
+
+  /*
+   * Reset the styling of the input
+   * (for example if errors have been shown)
+   */
+  var resetInput = function resetInput() {
+    var $modal = getModal();
+    var $input = getInput();
+
+    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($modal, 'show-input');
+    $input.value = _defaultParams2['default'].inputValue;
+    $input.setAttribute('type', _defaultParams2['default'].inputType);
+    $input.setAttribute('placeholder', _defaultParams2['default'].inputPlaceholder);
+
+    resetInputError();
+  };
+
+  var resetInputError = function resetInputError(event) {
+    // If press enter => ignore
+    if (event && event.keyCode === 13) {
+      return false;
+    }
+
+    var $modal = getModal();
+
+    var $errorIcon = $modal.querySelector('.sa-input-error');
+    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($errorIcon, 'show');
+
+    var $errorContainer = $modal.querySelector('.sa-error-container');
+    _removeClass$getTopMargin$fadeIn$show$addClass.removeClass($errorContainer, 'show');
+  };
+
+  /*
+   * Set "margin-top"-property on modal based on its computed height
+   */
+  var fixVerticalPosition = function fixVerticalPosition() {
+    var $modal = getModal();
+    $modal.style.marginTop = _removeClass$getTopMargin$fadeIn$show$addClass.getTopMargin(getModal());
+  };
+
+  exports.sweetAlertInitialize = sweetAlertInitialize;
+  exports.getModal = getModal;
+  exports.getOverlay = getOverlay;
+  exports.getInput = getInput;
+  exports.setFocusStyle = setFocusStyle;
+  exports.openModal = openModal;
+  exports.resetInput = resetInput;
+  exports.resetInputError = resetInputError;
+  exports.fixVerticalPosition = fixVerticalPosition;
+
+  /***/
+},
 /* 17 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGetTag = __webpack_require__(4),
-      isObjectLike = __webpack_require__(5);
+  var baseGetTag = __webpack_require__(5),
+      isObjectLike = __webpack_require__(6);
 
   /** `Object#toString` result references. */
   var symbolTag = '[object Symbol]';
@@ -1280,8 +1280,8 @@ var DELIVERY =
 /* 19 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getNative = __webpack_require__(2),
-      root = __webpack_require__(0);
+  var getNative = __webpack_require__(3),
+      root = __webpack_require__(1);
 
   /* Built-in method references that are verified to be native. */
   var Map = getNative(root, 'Map');
@@ -1293,11 +1293,11 @@ var DELIVERY =
 /* 20 */
 /***/function (module, exports, __webpack_require__) {
 
-  var mapCacheClear = __webpack_require__(101),
-      mapCacheDelete = __webpack_require__(108),
-      mapCacheGet = __webpack_require__(110),
-      mapCacheHas = __webpack_require__(111),
-      mapCacheSet = __webpack_require__(112);
+  var mapCacheClear = __webpack_require__(115),
+      mapCacheDelete = __webpack_require__(122),
+      mapCacheGet = __webpack_require__(124),
+      mapCacheHas = __webpack_require__(125),
+      mapCacheSet = __webpack_require__(126);
 
   /**
    * Creates a map cache object to store key-value pairs.
@@ -1331,8 +1331,8 @@ var DELIVERY =
 /* 21 */
 /***/function (module, exports, __webpack_require__) {
 
-  var arrayLikeKeys = __webpack_require__(129),
-      baseKeys = __webpack_require__(136),
+  var arrayLikeKeys = __webpack_require__(143),
+      baseKeys = __webpack_require__(150),
       isArrayLike = __webpack_require__(24);
 
   /**
@@ -1440,7 +1440,7 @@ var DELIVERY =
 /* 24 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isFunction = __webpack_require__(32),
+  var isFunction = __webpack_require__(33),
       isLength = __webpack_require__(23);
 
   /**
@@ -1479,7 +1479,7 @@ var DELIVERY =
 /* 25 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isArray = __webpack_require__(1),
+  var isArray = __webpack_require__(2),
       isSymbol = __webpack_require__(17);
 
   /** Used to match property names within property paths. */
@@ -1510,6 +1510,29 @@ var DELIVERY =
   /***/
 },
 /* 26 */
+/***/function (module, exports) {
+
+  var commonFormatterKeys = ['M', 'MM', 'Q', 'D', 'DD', 'DDD', 'DDDD', 'd', 'E', 'W', 'WW', 'YY', 'YYYY', 'GG', 'GGGG', 'H', 'HH', 'h', 'hh', 'm', 'mm', 's', 'ss', 'S', 'SS', 'SSS', 'Z', 'ZZ', 'X', 'x'];
+
+  function buildFormattingTokensRegExp(formatters) {
+    var formatterKeys = [];
+    for (var key in formatters) {
+      if (formatters.hasOwnProperty(key)) {
+        formatterKeys.push(key);
+      }
+    }
+
+    var formattingTokens = commonFormatterKeys.concat(formatterKeys).sort().reverse();
+    var formattingTokensRegExp = new RegExp('(\\[[^\\[]*\\])|(\\\\)?' + '(' + formattingTokens.join('|') + '|.)', 'g');
+
+    return formattingTokensRegExp;
+  }
+
+  module.exports = buildFormattingTokensRegExp;
+
+  /***/
+},
+/* 27 */
 /***/function (module, exports, __webpack_require__) {
 
   /* WEBPACK VAR INJECTION */(function (global) {
@@ -1519,11 +1542,11 @@ var DELIVERY =
     module.exports = freeGlobal;
 
     /* WEBPACK VAR INJECTION */
-  }).call(exports, __webpack_require__(55));
+  }).call(exports, __webpack_require__(69));
 
   /***/
 },
-/* 27 */
+/* 28 */
 /***/function (module, exports) {
 
   /** Used to compose unicode character classes. */
@@ -1555,7 +1578,7 @@ var DELIVERY =
 
   /***/
 },
-/* 28 */
+/* 29 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -1579,7 +1602,7 @@ var DELIVERY =
 
   /***/
 },
-/* 29 */
+/* 30 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -1589,11 +1612,11 @@ var DELIVERY =
   });
   exports.default = coerceToString;
 
-  var _is_nil = __webpack_require__(28);
+  var _is_nil = __webpack_require__(29);
 
   var _is_nil2 = _interopRequireDefault(_is_nil);
 
-  var _is_string = __webpack_require__(81);
+  var _is_string = __webpack_require__(95);
 
   var _is_string2 = _interopRequireDefault(_is_string);
 
@@ -1628,7 +1651,7 @@ var DELIVERY =
 
   /***/
 },
-/* 30 */
+/* 31 */
 /***/function (module, exports) {
 
   /**
@@ -1657,15 +1680,15 @@ var DELIVERY =
 
   /***/
 },
-/* 31 */
+/* 32 */
 /***/function (module, exports, __webpack_require__) {
 
-  var ListCache = __webpack_require__(8),
-      stackClear = __webpack_require__(92),
-      stackDelete = __webpack_require__(93),
-      stackGet = __webpack_require__(94),
-      stackHas = __webpack_require__(95),
-      stackSet = __webpack_require__(96);
+  var ListCache = __webpack_require__(9),
+      stackClear = __webpack_require__(106),
+      stackDelete = __webpack_require__(107),
+      stackGet = __webpack_require__(108),
+      stackHas = __webpack_require__(109),
+      stackSet = __webpack_require__(110);
 
   /**
    * Creates a stack cache object to store key-value pairs.
@@ -1690,11 +1713,11 @@ var DELIVERY =
 
   /***/
 },
-/* 32 */
+/* 33 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGetTag = __webpack_require__(4),
-      isObject = __webpack_require__(10);
+  var baseGetTag = __webpack_require__(5),
+      isObject = __webpack_require__(11);
 
   /** `Object#toString` result references. */
   var asyncTag = '[object AsyncFunction]',
@@ -1733,7 +1756,7 @@ var DELIVERY =
 
   /***/
 },
-/* 33 */
+/* 34 */
 /***/function (module, exports) {
 
   /** Used for built-in method references. */
@@ -1765,11 +1788,11 @@ var DELIVERY =
 
   /***/
 },
-/* 34 */
+/* 35 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseIsEqualDeep = __webpack_require__(113),
-      isObjectLike = __webpack_require__(5);
+  var baseIsEqualDeep = __webpack_require__(127),
+      isObjectLike = __webpack_require__(6);
 
   /**
    * The base implementation of `_.isEqual` which supports partial comparisons
@@ -1799,12 +1822,12 @@ var DELIVERY =
 
   /***/
 },
-/* 35 */
+/* 36 */
 /***/function (module, exports, __webpack_require__) {
 
-  var SetCache = __webpack_require__(114),
-      arraySome = __webpack_require__(30),
-      cacheHas = __webpack_require__(117);
+  var SetCache = __webpack_require__(128),
+      arraySome = __webpack_require__(31),
+      cacheHas = __webpack_require__(131);
 
   /** Used to compose bitmasks for value comparisons. */
   var COMPARE_PARTIAL_FLAG = 1,
@@ -1882,11 +1905,11 @@ var DELIVERY =
 
   /***/
 },
-/* 36 */
+/* 37 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseIsArguments = __webpack_require__(131),
-      isObjectLike = __webpack_require__(5);
+  var baseIsArguments = __webpack_require__(145),
+      isObjectLike = __webpack_require__(6);
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -1925,12 +1948,12 @@ var DELIVERY =
 
   /***/
 },
-/* 37 */
+/* 38 */
 /***/function (module, exports, __webpack_require__) {
 
   /* WEBPACK VAR INJECTION */(function (module) {
-    var root = __webpack_require__(0),
-        stubFalse = __webpack_require__(132);
+    var root = __webpack_require__(1),
+        stubFalse = __webpack_require__(146);
 
     /** Detect free variable `exports`. */
     var freeExports = (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) == 'object' && exports && !exports.nodeType && exports;
@@ -1969,11 +1992,11 @@ var DELIVERY =
     module.exports = isBuffer;
 
     /* WEBPACK VAR INJECTION */
-  }).call(exports, __webpack_require__(38)(module));
+  }).call(exports, __webpack_require__(39)(module));
 
   /***/
 },
-/* 38 */
+/* 39 */
 /***/function (module, exports) {
 
   module.exports = function (module) {
@@ -2001,12 +2024,12 @@ var DELIVERY =
 
   /***/
 },
-/* 39 */
+/* 40 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseIsTypedArray = __webpack_require__(133),
-      baseUnary = __webpack_require__(134),
-      nodeUtil = __webpack_require__(135);
+  var baseIsTypedArray = __webpack_require__(147),
+      baseUnary = __webpack_require__(148),
+      nodeUtil = __webpack_require__(149);
 
   /* Node.js helper references. */
   var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -2034,10 +2057,10 @@ var DELIVERY =
 
   /***/
 },
-/* 40 */
+/* 41 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isObject = __webpack_require__(10);
+  var isObject = __webpack_require__(11);
 
   /**
    * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
@@ -2055,7 +2078,7 @@ var DELIVERY =
 
   /***/
 },
-/* 41 */
+/* 42 */
 /***/function (module, exports) {
 
   /**
@@ -2080,11 +2103,11 @@ var DELIVERY =
 
   /***/
 },
-/* 42 */
+/* 43 */
 /***/function (module, exports, __webpack_require__) {
 
-  var castPath = __webpack_require__(43),
-      toKey = __webpack_require__(13);
+  var castPath = __webpack_require__(44),
+      toKey = __webpack_require__(14);
 
   /**
    * The base implementation of `_.get` without support for default values.
@@ -2110,13 +2133,13 @@ var DELIVERY =
 
   /***/
 },
-/* 43 */
+/* 44 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isArray = __webpack_require__(1),
+  var isArray = __webpack_require__(2),
       isKey = __webpack_require__(25),
-      stringToPath = __webpack_require__(148),
-      toString = __webpack_require__(3);
+      stringToPath = __webpack_require__(162),
+      toString = __webpack_require__(4);
 
   /**
    * Casts `value` to a path array if it's not one.
@@ -2137,7 +2160,7 @@ var DELIVERY =
 
   /***/
 },
-/* 44 */
+/* 45 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -2175,16 +2198,16 @@ var DELIVERY =
 
   /***/
 },
-/* 45 */
+/* 46 */
 /***/function (module, __webpack_exports__, __webpack_require__) {
 
   "use strict";
 
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__mod_date__ = __webpack_require__(46);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1__mod_string__ = __webpack_require__(52);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2__mod_array__ = __webpack_require__(82);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_3__mod_alert__ = __webpack_require__(165);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0__mod_date__ = __webpack_require__(47);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1__mod_string__ = __webpack_require__(66);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2__mod_array__ = __webpack_require__(96);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_3__mod_alert__ = __webpack_require__(179);
   /* harmony reexport (module object) */__webpack_require__.d(__webpack_exports__, "date", function () {
     return __WEBPACK_IMPORTED_MODULE_0__mod_date__;
   });
@@ -2256,24 +2279,29 @@ var DELIVERY =
 
   /***/
 },
-/* 46 */
+/* 47 */
 /***/function (module, __webpack_exports__, __webpack_require__) {
 
   "use strict";
 
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-  /* harmony export (immutable) */__webpack_exports__["duration"] = duration;
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future__ = __webpack_require__(47);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_is_future__);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after__ = __webpack_require__(49);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_date_fns_is_after__);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days__ = __webpack_require__(50);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days__);
+  /* harmony export (immutable) */__webpack_exports__["durationDays"] = durationDays;
+  /* harmony export (immutable) */__webpack_exports__["durationWords"] = durationWords;
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_date_fns_locale_fr__ = __webpack_require__(48);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_date_fns_locale_fr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_locale_fr__);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_future__ = __webpack_require__(51);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_date_fns_is_future___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_date_fns_is_future__);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_date_fns_is_after__ = __webpack_require__(53);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_date_fns_is_after___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns_is_after__);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_3_date_fns_distance_in_words__ = __webpack_require__(54);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_3_date_fns_distance_in_words___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_date_fns_distance_in_words__);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_4_date_fns_difference_in_calendar_days__ = __webpack_require__(64);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_4_date_fns_difference_in_calendar_days___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_date_fns_difference_in_calendar_days__);
   /* harmony reexport (default from non-hamory) */__webpack_require__.d(__webpack_exports__, "isFuture", function () {
-    return __WEBPACK_IMPORTED_MODULE_0_date_fns_is_future___default.a;
+    return __WEBPACK_IMPORTED_MODULE_1_date_fns_is_future___default.a;
   });
   /* harmony reexport (default from non-hamory) */__webpack_require__.d(__webpack_exports__, "isAfter", function () {
-    return __WEBPACK_IMPORTED_MODULE_1_date_fns_is_after___default.a;
+    return __WEBPACK_IMPORTED_MODULE_2_date_fns_is_after___default.a;
   });
 
   /**
@@ -2295,23 +2323,288 @@ var DELIVERY =
    * @param   {timestamp} end - End date expressed as a timestamp in seconds.
    * @returns {integer} - Number of days between the dates.
    */
-  function duration(start, end) {
+  function durationDays(start, end) {
     if (!start || !end || start > end) {
       return '0';
     } else {
       var dateStart = new Date(start * 1000);
       var dateEnd = new Date(end * 1000);
-      var duration = __WEBPACK_IMPORTED_MODULE_2_date_fns_difference_in_calendar_days___default()(dateEnd, dateStart);
+      var duration = __WEBPACK_IMPORTED_MODULE_4_date_fns_difference_in_calendar_days___default()(dateEnd, dateStart);
+      return duration;
+    }
+  }
+
+  /**
+   * Calculate the duration expressed in plain words between two dates.
+   * @param   {timestamp} start - Start date expressed as a timestamp in seconds.
+   * @param   {timestamp} end - End date expressed as a timestamp in seconds.
+   * @returns {string} - Duration in words between the dates.
+   */
+  function durationWords(start, end) {
+    if (!start || !end || start > end) {
+      return '';
+    } else {
+      var dateStart = new Date(start * 1000);
+      var dateEnd = new Date(end * 1000);
+      var duration = __WEBPACK_IMPORTED_MODULE_3_date_fns_distance_in_words___default()(dateEnd, dateStart, { locale: __WEBPACK_IMPORTED_MODULE_0_date_fns_locale_fr___default.a });
       return duration;
     }
   }
 
   /***/
 },
-/* 47 */
+/* 48 */
 /***/function (module, exports, __webpack_require__) {
 
-  var parse = __webpack_require__(16);
+  var buildDistanceInWordsLocale = __webpack_require__(49);
+  var buildFormatLocale = __webpack_require__(50);
+
+  /**
+   * @category Locales
+   * @summary French locale.
+   * @author Jean Dupouy [@izeau]{@link https://github.com/izeau}
+   * @author François B [@fbonzon]{@link https://github.com/fbonzon}
+   */
+  module.exports = {
+    distanceInWords: buildDistanceInWordsLocale(),
+    format: buildFormatLocale()
+
+    /***/ };
+},
+/* 49 */
+/***/function (module, exports) {
+
+  function buildDistanceInWordsLocale() {
+    var distanceInWordsLocale = {
+      lessThanXSeconds: {
+        one: 'moins d’une seconde',
+        other: 'moins de {{count}} secondes'
+      },
+
+      xSeconds: {
+        one: '1 seconde',
+        other: '{{count}} secondes'
+      },
+
+      halfAMinute: '30 secondes',
+
+      lessThanXMinutes: {
+        one: 'moins d’une minute',
+        other: 'moins de {{count}} minutes'
+      },
+
+      xMinutes: {
+        one: '1 minute',
+        other: '{{count}} minutes'
+      },
+
+      aboutXHours: {
+        one: 'environ 1 heure',
+        other: 'environ {{count}} heures'
+      },
+
+      xHours: {
+        one: '1 heure',
+        other: '{{count}} heures'
+      },
+
+      xDays: {
+        one: '1 jour',
+        other: '{{count}} jours'
+      },
+
+      aboutXMonths: {
+        one: 'environ 1 mois',
+        other: 'environ {{count}} mois'
+      },
+
+      xMonths: {
+        one: '1 mois',
+        other: '{{count}} mois'
+      },
+
+      aboutXYears: {
+        one: 'environ 1 an',
+        other: 'environ {{count}} ans'
+      },
+
+      xYears: {
+        one: '1 an',
+        other: '{{count}} ans'
+      },
+
+      overXYears: {
+        one: 'plus d’un an',
+        other: 'plus de {{count}} ans'
+      },
+
+      almostXYears: {
+        one: 'presqu’un an',
+        other: 'presque {{count}} ans'
+      }
+    };
+
+    function localize(token, count, options) {
+      options = options || {};
+
+      var result;
+      if (typeof distanceInWordsLocale[token] === 'string') {
+        result = distanceInWordsLocale[token];
+      } else if (count === 1) {
+        result = distanceInWordsLocale[token].one;
+      } else {
+        result = distanceInWordsLocale[token].other.replace('{{count}}', count);
+      }
+
+      if (options.addSuffix) {
+        if (options.comparison > 0) {
+          return 'dans ' + result;
+        } else {
+          return 'il y a ' + result;
+        }
+      }
+
+      return result;
+    }
+
+    return {
+      localize: localize
+    };
+  }
+
+  module.exports = buildDistanceInWordsLocale;
+
+  /***/
+},
+/* 50 */
+/***/function (module, exports, __webpack_require__) {
+
+  var buildFormattingTokensRegExp = __webpack_require__(26);
+
+  function buildFormatLocale() {
+    var months3char = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juill.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+    var monthsFull = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+    var weekdays2char = ['di', 'lu', 'ma', 'me', 'je', 've', 'sa'];
+    var weekdays3char = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+    var weekdaysFull = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+    var meridiemUppercase = ['AM', 'PM'];
+    var meridiemLowercase = ['am', 'pm'];
+    var meridiemFull = ['du matin', 'de l’après-midi', 'du soir'];
+
+    var formatters = {
+      // Month: Jan, Feb, …, Dec
+      'MMM': function MMM(date) {
+        return months3char[date.getMonth()];
+      },
+
+      // Month: January, February, …, December
+      'MMMM': function MMMM(date) {
+        return monthsFull[date.getMonth()];
+      },
+
+      // Day of week: Su, Mo, …, Sa
+      'dd': function dd(date) {
+        return weekdays2char[date.getDay()];
+      },
+
+      // Day of week: Sun, Mon, …, Sat
+      'ddd': function ddd(date) {
+        return weekdays3char[date.getDay()];
+      },
+
+      // Day of week: Sunday, Monday, …, Saturday
+      'dddd': function dddd(date) {
+        return weekdaysFull[date.getDay()];
+      },
+
+      // AM, PM
+      'A': function A(date) {
+        return date.getHours() / 12 >= 1 ? meridiemUppercase[1] : meridiemUppercase[0];
+      },
+
+      // am, pm
+      'a': function a(date) {
+        return date.getHours() / 12 >= 1 ? meridiemLowercase[1] : meridiemLowercase[0];
+      },
+
+      // a.m., p.m.
+      'aa': function aa(date) {
+        var hours = date.getHours();
+
+        if (hours <= 12) {
+          return meridiemFull[0];
+        }
+
+        if (hours <= 16) {
+          return meridiemFull[1];
+        }
+
+        return meridiemFull[2];
+      },
+
+      // ISO week, ordinal version: 1st, 2nd, …, 53rd
+      // NOTE: Week has feminine grammatical gender in French: semaine
+      'Wo': function Wo(date, formatters) {
+        return feminineOrdinal(formatters.W(date));
+      }
+
+      // Generate ordinal version of formatters: M → Mo, D → Do, etc.
+      // NOTE: For words with masculine grammatical gender in French: mois, jour, trimestre
+    };var formatterTokens = ['M', 'D', 'DDD', 'd', 'Q'];
+    formatterTokens.forEach(function (formatterToken) {
+      formatters[formatterToken + 'o'] = function (date, formatters) {
+        return masculineOrdinal(formatters[formatterToken](date));
+      };
+    });
+
+    // Special case for day of month ordinals in long date format context:
+    // 1er mars, 2 mars, 3 mars, …
+    // See https://github.com/date-fns/date-fns/issues/437
+    //
+    // NOTE: The below implementation works because parsing of tokens inside a
+    // format string is done by a greedy regular expression, i.e. longer tokens
+    // have priority. E.g. formatter for "Do MMMM" has priority over individual
+    // formatters for "Do" and "MMMM".
+    var monthsTokens = ['MMM', 'MMMM'];
+    monthsTokens.forEach(function (monthToken) {
+      formatters['Do ' + monthToken] = function (date, commonFormatters) {
+        var dayOfMonthToken = date.getDate() === 1 ? 'Do' : 'D';
+        var dayOfMonthFormatter = formatters[dayOfMonthToken] || commonFormatters[dayOfMonthToken];
+
+        return dayOfMonthFormatter(date, commonFormatters) + ' ' + formatters[monthToken](date);
+      };
+    });
+
+    return {
+      formatters: formatters,
+      formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+    };
+  }
+
+  function masculineOrdinal(number) {
+    if (number === 1) {
+      return '1er';
+    }
+
+    return number + 'e';
+  }
+
+  function feminineOrdinal(number) {
+    if (number === 1) {
+      return '1re';
+    }
+
+    return number + 'e';
+  }
+
+  module.exports = buildFormatLocale;
+
+  /***/
+},
+/* 51 */
+/***/function (module, exports, __webpack_require__) {
+
+  var parse = __webpack_require__(0);
 
   /**
    * @category Common Helpers
@@ -2336,7 +2629,7 @@ var DELIVERY =
 
   /***/
 },
-/* 48 */
+/* 52 */
 /***/function (module, exports) {
 
   /**
@@ -2362,10 +2655,10 @@ var DELIVERY =
 
   /***/
 },
-/* 49 */
+/* 53 */
 /***/function (module, exports, __webpack_require__) {
 
-  var parse = __webpack_require__(16);
+  var parse = __webpack_require__(0);
 
   /**
    * @category Common Helpers
@@ -2393,10 +2686,698 @@ var DELIVERY =
 
   /***/
 },
-/* 50 */
+/* 54 */
 /***/function (module, exports, __webpack_require__) {
 
-  var startOfDay = __webpack_require__(51);
+  var compareDesc = __webpack_require__(55);
+  var parse = __webpack_require__(0);
+  var differenceInSeconds = __webpack_require__(56);
+  var differenceInMonths = __webpack_require__(58);
+  var enLocale = __webpack_require__(61);
+
+  var MINUTES_IN_DAY = 1440;
+  var MINUTES_IN_ALMOST_TWO_DAYS = 2520;
+  var MINUTES_IN_MONTH = 43200;
+  var MINUTES_IN_TWO_MONTHS = 86400;
+
+  /**
+   * @category Common Helpers
+   * @summary Return the distance between the given dates in words.
+   *
+   * @description
+   * Return the distance between the given dates in words.
+   *
+   * | Distance between dates                                            | Result              |
+   * |-------------------------------------------------------------------|---------------------|
+   * | 0 ... 30 secs                                                     | less than a minute  |
+   * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+   * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+   * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+   * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+   * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+   * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+   * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+   * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+   * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+   * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+   * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+   * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+   * | N yrs ... N yrs 3 months                                          | about N years       |
+   * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+   * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+   *
+   * With `options.includeSeconds == true`:
+   * | Distance between dates | Result               |
+   * |------------------------|----------------------|
+   * | 0 secs ... 5 secs      | less than 5 seconds  |
+   * | 5 secs ... 10 secs     | less than 10 seconds |
+   * | 10 secs ... 20 secs    | less than 20 seconds |
+   * | 20 secs ... 40 secs    | half a minute        |
+   * | 40 secs ... 60 secs    | less than a minute   |
+   * | 60 secs ... 90 secs    | 1 minute             |
+   *
+   * @param {Date|String|Number} dateToCompare - the date to compare with
+   * @param {Date|String|Number} date - the other date
+   * @param {Object} [options] - the object with options
+   * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+   * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+   * @param {Object} [options.locale=enLocale] - the locale object
+   * @returns {String} the distance in words
+   *
+   * @example
+   * // What is the distance between 2 July 2014 and 1 January 2015?
+   * var result = distanceInWords(
+   *   new Date(2014, 6, 2),
+   *   new Date(2015, 0, 1)
+   * )
+   * //=> '6 months'
+   *
+   * @example
+   * // What is the distance between 1 January 2015 00:00:15
+   * // and 1 January 2015 00:00:00, including seconds?
+   * var result = distanceInWords(
+   *   new Date(2015, 0, 1, 0, 0, 15),
+   *   new Date(2015, 0, 1, 0, 0, 0),
+   *   {includeSeconds: true}
+   * )
+   * //=> 'less than 20 seconds'
+   *
+   * @example
+   * // What is the distance from 1 January 2016
+   * // to 1 January 2015, with a suffix?
+   * var result = distanceInWords(
+   *   new Date(2016, 0, 1),
+   *   new Date(2015, 0, 1),
+   *   {addSuffix: true}
+   * )
+   * //=> 'about 1 year ago'
+   *
+   * @example
+   * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+   * var eoLocale = require('date-fns/locale/eo')
+   * var result = distanceInWords(
+   *   new Date(2016, 7, 1),
+   *   new Date(2015, 0, 1),
+   *   {locale: eoLocale}
+   * )
+   * //=> 'pli ol 1 jaro'
+   */
+  function distanceInWords(dirtyDateToCompare, dirtyDate, dirtyOptions) {
+    var options = dirtyOptions || {};
+
+    var comparison = compareDesc(dirtyDateToCompare, dirtyDate);
+
+    var locale = options.locale;
+    var localize = enLocale.distanceInWords.localize;
+    if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
+      localize = locale.distanceInWords.localize;
+    }
+
+    var localizeOptions = {
+      addSuffix: Boolean(options.addSuffix),
+      comparison: comparison
+    };
+
+    var dateLeft, dateRight;
+    if (comparison > 0) {
+      dateLeft = parse(dirtyDateToCompare);
+      dateRight = parse(dirtyDate);
+    } else {
+      dateLeft = parse(dirtyDate);
+      dateRight = parse(dirtyDateToCompare);
+    }
+
+    var seconds = differenceInSeconds(dateRight, dateLeft);
+    var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset();
+    var minutes = Math.round(seconds / 60) - offset;
+    var months;
+
+    // 0 up to 2 mins
+    if (minutes < 2) {
+      if (options.includeSeconds) {
+        if (seconds < 5) {
+          return localize('lessThanXSeconds', 5, localizeOptions);
+        } else if (seconds < 10) {
+          return localize('lessThanXSeconds', 10, localizeOptions);
+        } else if (seconds < 20) {
+          return localize('lessThanXSeconds', 20, localizeOptions);
+        } else if (seconds < 40) {
+          return localize('halfAMinute', null, localizeOptions);
+        } else if (seconds < 60) {
+          return localize('lessThanXMinutes', 1, localizeOptions);
+        } else {
+          return localize('xMinutes', 1, localizeOptions);
+        }
+      } else {
+        if (minutes === 0) {
+          return localize('lessThanXMinutes', 1, localizeOptions);
+        } else {
+          return localize('xMinutes', minutes, localizeOptions);
+        }
+      }
+
+      // 2 mins up to 0.75 hrs
+    } else if (minutes < 45) {
+      return localize('xMinutes', minutes, localizeOptions);
+
+      // 0.75 hrs up to 1.5 hrs
+    } else if (minutes < 90) {
+      return localize('aboutXHours', 1, localizeOptions);
+
+      // 1.5 hrs up to 24 hrs
+    } else if (minutes < MINUTES_IN_DAY) {
+      var hours = Math.round(minutes / 60);
+      return localize('aboutXHours', hours, localizeOptions);
+
+      // 1 day up to 1.75 days
+    } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
+      return localize('xDays', 1, localizeOptions);
+
+      // 1.75 days up to 30 days
+    } else if (minutes < MINUTES_IN_MONTH) {
+      var days = Math.round(minutes / MINUTES_IN_DAY);
+      return localize('xDays', days, localizeOptions);
+
+      // 1 month up to 2 months
+    } else if (minutes < MINUTES_IN_TWO_MONTHS) {
+      months = Math.round(minutes / MINUTES_IN_MONTH);
+      return localize('aboutXMonths', months, localizeOptions);
+    }
+
+    months = differenceInMonths(dateRight, dateLeft);
+
+    // 2 months up to 12 months
+    if (months < 12) {
+      var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH);
+      return localize('xMonths', nearestMonth, localizeOptions);
+
+      // 1 year up to max Date
+    } else {
+      var monthsSinceStartOfYear = months % 12;
+      var years = Math.floor(months / 12);
+
+      // N years up to 1 years 3 months
+      if (monthsSinceStartOfYear < 3) {
+        return localize('aboutXYears', years, localizeOptions);
+
+        // N years 3 months up to N years 9 months
+      } else if (monthsSinceStartOfYear < 9) {
+        return localize('overXYears', years, localizeOptions);
+
+        // N years 9 months up to N year 12 months
+      } else {
+        return localize('almostXYears', years + 1, localizeOptions);
+      }
+    }
+  }
+
+  module.exports = distanceInWords;
+
+  /***/
+},
+/* 55 */
+/***/function (module, exports, __webpack_require__) {
+
+  var parse = __webpack_require__(0);
+
+  /**
+   * @category Common Helpers
+   * @summary Compare the two dates reverse chronologically and return -1, 0 or 1.
+   *
+   * @description
+   * Compare the two dates and return -1 if the first date is after the second,
+   * 1 if the first date is before the second or 0 if dates are equal.
+   *
+   * @param {Date|String|Number} dateLeft - the first date to compare
+   * @param {Date|String|Number} dateRight - the second date to compare
+   * @returns {Number} the result of the comparison
+   *
+   * @example
+   * // Compare 11 February 1987 and 10 July 1989 reverse chronologically:
+   * var result = compareDesc(
+   *   new Date(1987, 1, 11),
+   *   new Date(1989, 6, 10)
+   * )
+   * //=> 1
+   *
+   * @example
+   * // Sort the array of dates in reverse chronological order:
+   * var result = [
+   *   new Date(1995, 6, 2),
+   *   new Date(1987, 1, 11),
+   *   new Date(1989, 6, 10)
+   * ].sort(compareDesc)
+   * //=> [
+   * //   Sun Jul 02 1995 00:00:00,
+   * //   Mon Jul 10 1989 00:00:00,
+   * //   Wed Feb 11 1987 00:00:00
+   * // ]
+   */
+  function compareDesc(dirtyDateLeft, dirtyDateRight) {
+    var dateLeft = parse(dirtyDateLeft);
+    var timeLeft = dateLeft.getTime();
+    var dateRight = parse(dirtyDateRight);
+    var timeRight = dateRight.getTime();
+
+    if (timeLeft > timeRight) {
+      return -1;
+    } else if (timeLeft < timeRight) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  module.exports = compareDesc;
+
+  /***/
+},
+/* 56 */
+/***/function (module, exports, __webpack_require__) {
+
+  var differenceInMilliseconds = __webpack_require__(57);
+
+  /**
+   * @category Second Helpers
+   * @summary Get the number of seconds between the given dates.
+   *
+   * @description
+   * Get the number of seconds between the given dates.
+   *
+   * @param {Date|String|Number} dateLeft - the later date
+   * @param {Date|String|Number} dateRight - the earlier date
+   * @returns {Number} the number of seconds
+   *
+   * @example
+   * // How many seconds are between
+   * // 2 July 2014 12:30:07.999 and 2 July 2014 12:30:20.000?
+   * var result = differenceInSeconds(
+   *   new Date(2014, 6, 2, 12, 30, 20, 0),
+   *   new Date(2014, 6, 2, 12, 30, 7, 999)
+   * )
+   * //=> 12
+   */
+  function differenceInSeconds(dirtyDateLeft, dirtyDateRight) {
+    var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000;
+    return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
+  }
+
+  module.exports = differenceInSeconds;
+
+  /***/
+},
+/* 57 */
+/***/function (module, exports, __webpack_require__) {
+
+  var parse = __webpack_require__(0);
+
+  /**
+   * @category Millisecond Helpers
+   * @summary Get the number of milliseconds between the given dates.
+   *
+   * @description
+   * Get the number of milliseconds between the given dates.
+   *
+   * @param {Date|String|Number} dateLeft - the later date
+   * @param {Date|String|Number} dateRight - the earlier date
+   * @returns {Number} the number of milliseconds
+   *
+   * @example
+   * // How many milliseconds are between
+   * // 2 July 2014 12:30:20.600 and 2 July 2014 12:30:21.700?
+   * var result = differenceInMilliseconds(
+   *   new Date(2014, 6, 2, 12, 30, 21, 700),
+   *   new Date(2014, 6, 2, 12, 30, 20, 600)
+   * )
+   * //=> 1100
+   */
+  function differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) {
+    var dateLeft = parse(dirtyDateLeft);
+    var dateRight = parse(dirtyDateRight);
+    return dateLeft.getTime() - dateRight.getTime();
+  }
+
+  module.exports = differenceInMilliseconds;
+
+  /***/
+},
+/* 58 */
+/***/function (module, exports, __webpack_require__) {
+
+  var parse = __webpack_require__(0);
+  var differenceInCalendarMonths = __webpack_require__(59);
+  var compareAsc = __webpack_require__(60);
+
+  /**
+   * @category Month Helpers
+   * @summary Get the number of full months between the given dates.
+   *
+   * @description
+   * Get the number of full months between the given dates.
+   *
+   * @param {Date|String|Number} dateLeft - the later date
+   * @param {Date|String|Number} dateRight - the earlier date
+   * @returns {Number} the number of full months
+   *
+   * @example
+   * // How many full months are between 31 January 2014 and 1 September 2014?
+   * var result = differenceInMonths(
+   *   new Date(2014, 8, 1),
+   *   new Date(2014, 0, 31)
+   * )
+   * //=> 7
+   */
+  function differenceInMonths(dirtyDateLeft, dirtyDateRight) {
+    var dateLeft = parse(dirtyDateLeft);
+    var dateRight = parse(dirtyDateRight);
+
+    var sign = compareAsc(dateLeft, dateRight);
+    var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight));
+    dateLeft.setMonth(dateLeft.getMonth() - sign * difference);
+
+    // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
+    // If so, result must be decreased by 1 in absolute value
+    var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign;
+    return sign * (difference - isLastMonthNotFull);
+  }
+
+  module.exports = differenceInMonths;
+
+  /***/
+},
+/* 59 */
+/***/function (module, exports, __webpack_require__) {
+
+  var parse = __webpack_require__(0);
+
+  /**
+   * @category Month Helpers
+   * @summary Get the number of calendar months between the given dates.
+   *
+   * @description
+   * Get the number of calendar months between the given dates.
+   *
+   * @param {Date|String|Number} dateLeft - the later date
+   * @param {Date|String|Number} dateRight - the earlier date
+   * @returns {Number} the number of calendar months
+   *
+   * @example
+   * // How many calendar months are between 31 January 2014 and 1 September 2014?
+   * var result = differenceInCalendarMonths(
+   *   new Date(2014, 8, 1),
+   *   new Date(2014, 0, 31)
+   * )
+   * //=> 8
+   */
+  function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
+    var dateLeft = parse(dirtyDateLeft);
+    var dateRight = parse(dirtyDateRight);
+
+    var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
+    var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
+
+    return yearDiff * 12 + monthDiff;
+  }
+
+  module.exports = differenceInCalendarMonths;
+
+  /***/
+},
+/* 60 */
+/***/function (module, exports, __webpack_require__) {
+
+  var parse = __webpack_require__(0);
+
+  /**
+   * @category Common Helpers
+   * @summary Compare the two dates and return -1, 0 or 1.
+   *
+   * @description
+   * Compare the two dates and return 1 if the first date is after the second,
+   * -1 if the first date is before the second or 0 if dates are equal.
+   *
+   * @param {Date|String|Number} dateLeft - the first date to compare
+   * @param {Date|String|Number} dateRight - the second date to compare
+   * @returns {Number} the result of the comparison
+   *
+   * @example
+   * // Compare 11 February 1987 and 10 July 1989:
+   * var result = compareAsc(
+   *   new Date(1987, 1, 11),
+   *   new Date(1989, 6, 10)
+   * )
+   * //=> -1
+   *
+   * @example
+   * // Sort the array of dates:
+   * var result = [
+   *   new Date(1995, 6, 2),
+   *   new Date(1987, 1, 11),
+   *   new Date(1989, 6, 10)
+   * ].sort(compareAsc)
+   * //=> [
+   * //   Wed Feb 11 1987 00:00:00,
+   * //   Mon Jul 10 1989 00:00:00,
+   * //   Sun Jul 02 1995 00:00:00
+   * // ]
+   */
+  function compareAsc(dirtyDateLeft, dirtyDateRight) {
+    var dateLeft = parse(dirtyDateLeft);
+    var timeLeft = dateLeft.getTime();
+    var dateRight = parse(dirtyDateRight);
+    var timeRight = dateRight.getTime();
+
+    if (timeLeft < timeRight) {
+      return -1;
+    } else if (timeLeft > timeRight) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  module.exports = compareAsc;
+
+  /***/
+},
+/* 61 */
+/***/function (module, exports, __webpack_require__) {
+
+  var buildDistanceInWordsLocale = __webpack_require__(62);
+  var buildFormatLocale = __webpack_require__(63);
+
+  /**
+   * @category Locales
+   * @summary English locale.
+   */
+  module.exports = {
+    distanceInWords: buildDistanceInWordsLocale(),
+    format: buildFormatLocale()
+
+    /***/ };
+},
+/* 62 */
+/***/function (module, exports) {
+
+  function buildDistanceInWordsLocale() {
+    var distanceInWordsLocale = {
+      lessThanXSeconds: {
+        one: 'less than a second',
+        other: 'less than {{count}} seconds'
+      },
+
+      xSeconds: {
+        one: '1 second',
+        other: '{{count}} seconds'
+      },
+
+      halfAMinute: 'half a minute',
+
+      lessThanXMinutes: {
+        one: 'less than a minute',
+        other: 'less than {{count}} minutes'
+      },
+
+      xMinutes: {
+        one: '1 minute',
+        other: '{{count}} minutes'
+      },
+
+      aboutXHours: {
+        one: 'about 1 hour',
+        other: 'about {{count}} hours'
+      },
+
+      xHours: {
+        one: '1 hour',
+        other: '{{count}} hours'
+      },
+
+      xDays: {
+        one: '1 day',
+        other: '{{count}} days'
+      },
+
+      aboutXMonths: {
+        one: 'about 1 month',
+        other: 'about {{count}} months'
+      },
+
+      xMonths: {
+        one: '1 month',
+        other: '{{count}} months'
+      },
+
+      aboutXYears: {
+        one: 'about 1 year',
+        other: 'about {{count}} years'
+      },
+
+      xYears: {
+        one: '1 year',
+        other: '{{count}} years'
+      },
+
+      overXYears: {
+        one: 'over 1 year',
+        other: 'over {{count}} years'
+      },
+
+      almostXYears: {
+        one: 'almost 1 year',
+        other: 'almost {{count}} years'
+      }
+    };
+
+    function localize(token, count, options) {
+      options = options || {};
+
+      var result;
+      if (typeof distanceInWordsLocale[token] === 'string') {
+        result = distanceInWordsLocale[token];
+      } else if (count === 1) {
+        result = distanceInWordsLocale[token].one;
+      } else {
+        result = distanceInWordsLocale[token].other.replace('{{count}}', count);
+      }
+
+      if (options.addSuffix) {
+        if (options.comparison > 0) {
+          return 'in ' + result;
+        } else {
+          return result + ' ago';
+        }
+      }
+
+      return result;
+    }
+
+    return {
+      localize: localize
+    };
+  }
+
+  module.exports = buildDistanceInWordsLocale;
+
+  /***/
+},
+/* 63 */
+/***/function (module, exports, __webpack_require__) {
+
+  var buildFormattingTokensRegExp = __webpack_require__(26);
+
+  function buildFormatLocale() {
+    // Note: in English, the names of days of the week and months are capitalized.
+    // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+    // Generally, formatted dates should look like they are in the middle of a sentence,
+    // e.g. in Spanish language the weekdays and months should be in the lowercase.
+    var months3char = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var monthsFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var weekdays2char = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    var weekdays3char = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var weekdaysFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var meridiemUppercase = ['AM', 'PM'];
+    var meridiemLowercase = ['am', 'pm'];
+    var meridiemFull = ['a.m.', 'p.m.'];
+
+    var formatters = {
+      // Month: Jan, Feb, ..., Dec
+      'MMM': function MMM(date) {
+        return months3char[date.getMonth()];
+      },
+
+      // Month: January, February, ..., December
+      'MMMM': function MMMM(date) {
+        return monthsFull[date.getMonth()];
+      },
+
+      // Day of week: Su, Mo, ..., Sa
+      'dd': function dd(date) {
+        return weekdays2char[date.getDay()];
+      },
+
+      // Day of week: Sun, Mon, ..., Sat
+      'ddd': function ddd(date) {
+        return weekdays3char[date.getDay()];
+      },
+
+      // Day of week: Sunday, Monday, ..., Saturday
+      'dddd': function dddd(date) {
+        return weekdaysFull[date.getDay()];
+      },
+
+      // AM, PM
+      'A': function A(date) {
+        return date.getHours() / 12 >= 1 ? meridiemUppercase[1] : meridiemUppercase[0];
+      },
+
+      // am, pm
+      'a': function a(date) {
+        return date.getHours() / 12 >= 1 ? meridiemLowercase[1] : meridiemLowercase[0];
+      },
+
+      // a.m., p.m.
+      'aa': function aa(date) {
+        return date.getHours() / 12 >= 1 ? meridiemFull[1] : meridiemFull[0];
+      }
+
+      // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+    };var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W'];
+    ordinalFormatters.forEach(function (formatterToken) {
+      formatters[formatterToken + 'o'] = function (date, formatters) {
+        return ordinal(formatters[formatterToken](date));
+      };
+    });
+
+    return {
+      formatters: formatters,
+      formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+    };
+  }
+
+  function ordinal(number) {
+    var rem100 = number % 100;
+    if (rem100 > 20 || rem100 < 10) {
+      switch (rem100 % 10) {
+        case 1:
+          return number + 'st';
+        case 2:
+          return number + 'nd';
+        case 3:
+          return number + 'rd';
+      }
+    }
+    return number + 'th';
+  }
+
+  module.exports = buildFormatLocale;
+
+  /***/
+},
+/* 64 */
+/***/function (module, exports, __webpack_require__) {
+
+  var startOfDay = __webpack_require__(65);
 
   var MILLISECONDS_IN_MINUTE = 60000;
   var MILLISECONDS_IN_DAY = 86400000;
@@ -2438,10 +3419,10 @@ var DELIVERY =
 
   /***/
 },
-/* 51 */
+/* 65 */
 /***/function (module, exports, __webpack_require__) {
 
-  var parse = __webpack_require__(16);
+  var parse = __webpack_require__(0);
 
   /**
    * @category Day Helpers
@@ -2469,7 +3450,7 @@ var DELIVERY =
 
   /***/
 },
-/* 52 */
+/* 66 */
 /***/function (module, __webpack_exports__, __webpack_require__) {
 
   "use strict";
@@ -2477,11 +3458,11 @@ var DELIVERY =
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   /* harmony export (immutable) */__webpack_exports__["isEmpty"] = isEmpty;
   /* harmony export (immutable) */__webpack_exports__["properCase"] = properCase;
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_toLower__ = __webpack_require__(53);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_toLower__ = __webpack_require__(67);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_toLower___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_toLower__);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_lodash_startCase__ = __webpack_require__(59);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_lodash_startCase__ = __webpack_require__(73);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_1_lodash_startCase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_startCase__);
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_voca_title_case__ = __webpack_require__(76);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_voca_title_case__ = __webpack_require__(90);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_2_voca_title_case___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_voca_title_case__);
   /* harmony reexport (default from non-hamory) */__webpack_require__.d(__webpack_exports__, "titleCase", function () {
     return __WEBPACK_IMPORTED_MODULE_2_voca_title_case___default.a;
@@ -2532,10 +3513,10 @@ var DELIVERY =
 
   /***/
 },
-/* 53 */
+/* 67 */
 /***/function (module, exports, __webpack_require__) {
 
-  var toString = __webpack_require__(3);
+  var toString = __webpack_require__(4);
 
   /**
    * Converts `string`, as a whole, to lower case just like
@@ -2566,12 +3547,12 @@ var DELIVERY =
 
   /***/
 },
-/* 54 */
+/* 68 */
 /***/function (module, exports, __webpack_require__) {
 
-  var _Symbol3 = __webpack_require__(7),
-      arrayMap = __webpack_require__(56),
-      isArray = __webpack_require__(1),
+  var _Symbol3 = __webpack_require__(8),
+      arrayMap = __webpack_require__(70),
+      isArray = __webpack_require__(2),
       isSymbol = __webpack_require__(17);
 
   /** Used as references for various `Number` constants. */
@@ -2609,7 +3590,7 @@ var DELIVERY =
 
   /***/
 },
-/* 55 */
+/* 69 */
 /***/function (module, exports) {
 
   var g;
@@ -2635,7 +3616,7 @@ var DELIVERY =
 
   /***/
 },
-/* 56 */
+/* 70 */
 /***/function (module, exports) {
 
   /**
@@ -2662,10 +3643,10 @@ var DELIVERY =
 
   /***/
 },
-/* 57 */
+/* 71 */
 /***/function (module, exports, __webpack_require__) {
 
-  var _Symbol4 = __webpack_require__(7);
+  var _Symbol4 = __webpack_require__(8);
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -2714,7 +3695,7 @@ var DELIVERY =
 
   /***/
 },
-/* 58 */
+/* 72 */
 /***/function (module, exports) {
 
   /** Used for built-in method references. */
@@ -2742,11 +3723,11 @@ var DELIVERY =
 
   /***/
 },
-/* 59 */
+/* 73 */
 /***/function (module, exports, __webpack_require__) {
 
-  var createCompounder = __webpack_require__(60),
-      upperFirst = __webpack_require__(69);
+  var createCompounder = __webpack_require__(74),
+      upperFirst = __webpack_require__(83);
 
   /**
    * Converts `string` to
@@ -2777,12 +3758,12 @@ var DELIVERY =
 
   /***/
 },
-/* 60 */
+/* 74 */
 /***/function (module, exports, __webpack_require__) {
 
-  var arrayReduce = __webpack_require__(61),
-      deburr = __webpack_require__(62),
-      words = __webpack_require__(65);
+  var arrayReduce = __webpack_require__(75),
+      deburr = __webpack_require__(76),
+      words = __webpack_require__(79);
 
   /** Used to compose unicode capture groups. */
   var rsApos = '[\'\u2019]';
@@ -2807,7 +3788,7 @@ var DELIVERY =
 
   /***/
 },
-/* 61 */
+/* 75 */
 /***/function (module, exports) {
 
   /**
@@ -2839,11 +3820,11 @@ var DELIVERY =
 
   /***/
 },
-/* 62 */
+/* 76 */
 /***/function (module, exports, __webpack_require__) {
 
-  var deburrLetter = __webpack_require__(63),
-      toString = __webpack_require__(3);
+  var deburrLetter = __webpack_require__(77),
+      toString = __webpack_require__(4);
 
   /** Used to match Latin Unicode letters (excluding mathematical operators). */
   var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
@@ -2890,10 +3871,10 @@ var DELIVERY =
 
   /***/
 },
-/* 63 */
+/* 77 */
 /***/function (module, exports, __webpack_require__) {
 
-  var basePropertyOf = __webpack_require__(64);
+  var basePropertyOf = __webpack_require__(78);
 
   /** Used to map Latin Unicode letters to basic Latin letters. */
   var deburredLetters = {
@@ -2967,7 +3948,7 @@ var DELIVERY =
 
   /***/
 },
-/* 64 */
+/* 78 */
 /***/function (module, exports) {
 
   /**
@@ -2987,13 +3968,13 @@ var DELIVERY =
 
   /***/
 },
-/* 65 */
+/* 79 */
 /***/function (module, exports, __webpack_require__) {
 
-  var asciiWords = __webpack_require__(66),
-      hasUnicodeWord = __webpack_require__(67),
-      toString = __webpack_require__(3),
-      unicodeWords = __webpack_require__(68);
+  var asciiWords = __webpack_require__(80),
+      hasUnicodeWord = __webpack_require__(81),
+      toString = __webpack_require__(4),
+      unicodeWords = __webpack_require__(82);
 
   /**
    * Splits `string` into an array of its words.
@@ -3028,7 +4009,7 @@ var DELIVERY =
 
   /***/
 },
-/* 66 */
+/* 80 */
 /***/function (module, exports) {
 
   /** Used to match words composed of alphanumeric characters. */
@@ -3049,7 +4030,7 @@ var DELIVERY =
 
   /***/
 },
-/* 67 */
+/* 81 */
 /***/function (module, exports) {
 
   /** Used to detect strings that need a more robust regexp to match words. */
@@ -3070,7 +4051,7 @@ var DELIVERY =
 
   /***/
 },
-/* 68 */
+/* 82 */
 /***/function (module, exports) {
 
   /** Used to compose unicode character classes. */
@@ -3136,10 +4117,10 @@ var DELIVERY =
 
   /***/
 },
-/* 69 */
+/* 83 */
 /***/function (module, exports, __webpack_require__) {
 
-  var createCaseFirst = __webpack_require__(70);
+  var createCaseFirst = __webpack_require__(84);
 
   /**
    * Converts the first character of `string` to upper case.
@@ -3164,13 +4145,13 @@ var DELIVERY =
 
   /***/
 },
-/* 70 */
+/* 84 */
 /***/function (module, exports, __webpack_require__) {
 
-  var castSlice = __webpack_require__(71),
-      hasUnicode = __webpack_require__(27),
-      stringToArray = __webpack_require__(73),
-      toString = __webpack_require__(3);
+  var castSlice = __webpack_require__(85),
+      hasUnicode = __webpack_require__(28),
+      stringToArray = __webpack_require__(87),
+      toString = __webpack_require__(4);
 
   /**
    * Creates a function like `_.lowerFirst`.
@@ -3197,10 +4178,10 @@ var DELIVERY =
 
   /***/
 },
-/* 71 */
+/* 85 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseSlice = __webpack_require__(72);
+  var baseSlice = __webpack_require__(86);
 
   /**
    * Casts `array` to a slice if it's needed.
@@ -3221,7 +4202,7 @@ var DELIVERY =
 
   /***/
 },
-/* 72 */
+/* 86 */
 /***/function (module, exports) {
 
   /**
@@ -3258,12 +4239,12 @@ var DELIVERY =
 
   /***/
 },
-/* 73 */
+/* 87 */
 /***/function (module, exports, __webpack_require__) {
 
-  var asciiToArray = __webpack_require__(74),
-      hasUnicode = __webpack_require__(27),
-      unicodeToArray = __webpack_require__(75);
+  var asciiToArray = __webpack_require__(88),
+      hasUnicode = __webpack_require__(28),
+      unicodeToArray = __webpack_require__(89);
 
   /**
    * Converts `string` to an array.
@@ -3280,7 +4261,7 @@ var DELIVERY =
 
   /***/
 },
-/* 74 */
+/* 88 */
 /***/function (module, exports) {
 
   /**
@@ -3298,7 +4279,7 @@ var DELIVERY =
 
   /***/
 },
-/* 75 */
+/* 89 */
 /***/function (module, exports) {
 
   /** Used to compose unicode character classes. */
@@ -3344,7 +4325,7 @@ var DELIVERY =
 
   /***/
 },
-/* 76 */
+/* 90 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -3354,13 +4335,13 @@ var DELIVERY =
   });
   exports.default = titleCase;
 
-  var _const_extended = __webpack_require__(77);
+  var _const_extended = __webpack_require__(91);
 
-  var _capitalize = __webpack_require__(79);
+  var _capitalize = __webpack_require__(93);
 
   var _capitalize2 = _interopRequireDefault(_capitalize);
 
-  var _coerce_to_string = __webpack_require__(29);
+  var _coerce_to_string = __webpack_require__(30);
 
   var _coerce_to_string2 = _interopRequireDefault(_coerce_to_string);
 
@@ -3398,7 +4379,7 @@ var DELIVERY =
 
   /***/
 },
-/* 77 */
+/* 91 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -3408,7 +4389,7 @@ var DELIVERY =
   });
   exports.REGEXP_EXTENDED_ASCII = exports.REGEXP_ALPHA_DIGIT = exports.REGEXP_ALPHA = exports.REGEXP_LATIN_WORD = exports.REGEXP_WORD = undefined;
 
-  var _const = __webpack_require__(78);
+  var _const = __webpack_require__(92);
 
   /**
    * A regular expression to match the General Punctuation Unicode block
@@ -3498,7 +4479,7 @@ var DELIVERY =
 
   /***/
 },
-/* 78 */
+/* 92 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -3673,7 +4654,7 @@ var DELIVERY =
 
   /***/
 },
-/* 79 */
+/* 93 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -3683,11 +4664,11 @@ var DELIVERY =
   });
   exports.default = capitalize;
 
-  var _coerce_to_boolean = __webpack_require__(80);
+  var _coerce_to_boolean = __webpack_require__(94);
 
   var _coerce_to_boolean2 = _interopRequireDefault(_coerce_to_boolean);
 
-  var _coerce_to_string = __webpack_require__(29);
+  var _coerce_to_string = __webpack_require__(30);
 
   var _coerce_to_string2 = _interopRequireDefault(_coerce_to_string);
 
@@ -3728,7 +4709,7 @@ var DELIVERY =
 
   /***/
 },
-/* 80 */
+/* 94 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -3738,7 +4719,7 @@ var DELIVERY =
   });
   exports.default = coerceToBoolean;
 
-  var _is_nil = __webpack_require__(28);
+  var _is_nil = __webpack_require__(29);
 
   var _is_nil2 = _interopRequireDefault(_is_nil);
 
@@ -3767,7 +4748,7 @@ var DELIVERY =
 
   /***/
 },
-/* 81 */
+/* 95 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -3799,7 +4780,7 @@ var DELIVERY =
 
   /***/
 },
-/* 82 */
+/* 96 */
 /***/function (module, __webpack_exports__, __webpack_require__) {
 
   "use strict";
@@ -3807,7 +4788,7 @@ var DELIVERY =
   Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   /* harmony export (immutable) */__webpack_exports__["inArray"] = inArray;
   /* harmony export (immutable) */__webpack_exports__["sumColumn"] = sumColumn;
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_some__ = __webpack_require__(83);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_some__ = __webpack_require__(97);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_lodash_some___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_some__);
   // import _ from 'lodash'
 
@@ -3839,14 +4820,14 @@ var DELIVERY =
 
   /***/
 },
-/* 83 */
+/* 97 */
 /***/function (module, exports, __webpack_require__) {
 
-  var arraySome = __webpack_require__(30),
-      baseIteratee = __webpack_require__(84),
-      baseSome = __webpack_require__(158),
-      isArray = __webpack_require__(1),
-      isIterateeCall = __webpack_require__(164);
+  var arraySome = __webpack_require__(31),
+      baseIteratee = __webpack_require__(98),
+      baseSome = __webpack_require__(172),
+      isArray = __webpack_require__(2),
+      isIterateeCall = __webpack_require__(178);
 
   /**
    * Checks if `predicate` returns truthy for **any** element of `collection`.
@@ -3896,14 +4877,14 @@ var DELIVERY =
 
   /***/
 },
-/* 84 */
+/* 98 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseMatches = __webpack_require__(85),
-      baseMatchesProperty = __webpack_require__(146),
-      identity = __webpack_require__(154),
-      isArray = __webpack_require__(1),
-      property = __webpack_require__(155);
+  var baseMatches = __webpack_require__(99),
+      baseMatchesProperty = __webpack_require__(160),
+      identity = __webpack_require__(168),
+      isArray = __webpack_require__(2),
+      property = __webpack_require__(169);
 
   /**
    * The base implementation of `_.iteratee`.
@@ -3931,12 +4912,12 @@ var DELIVERY =
 
   /***/
 },
-/* 85 */
+/* 99 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseIsMatch = __webpack_require__(86),
-      getMatchData = __webpack_require__(145),
-      matchesStrictComparable = __webpack_require__(41);
+  var baseIsMatch = __webpack_require__(100),
+      getMatchData = __webpack_require__(159),
+      matchesStrictComparable = __webpack_require__(42);
 
   /**
    * The base implementation of `_.matches` which doesn't clone `source`.
@@ -3959,11 +4940,11 @@ var DELIVERY =
 
   /***/
 },
-/* 86 */
+/* 100 */
 /***/function (module, exports, __webpack_require__) {
 
-  var Stack = __webpack_require__(31),
-      baseIsEqual = __webpack_require__(34);
+  var Stack = __webpack_require__(32),
+      baseIsEqual = __webpack_require__(35);
 
   /** Used to compose bitmasks for value comparisons. */
   var COMPARE_PARTIAL_FLAG = 1,
@@ -4021,7 +5002,7 @@ var DELIVERY =
 
   /***/
 },
-/* 87 */
+/* 101 */
 /***/function (module, exports) {
 
   /**
@@ -4040,10 +5021,10 @@ var DELIVERY =
 
   /***/
 },
-/* 88 */
+/* 102 */
 /***/function (module, exports, __webpack_require__) {
 
-  var assocIndexOf = __webpack_require__(9);
+  var assocIndexOf = __webpack_require__(10);
 
   /** Used for built-in method references. */
   var arrayProto = Array.prototype;
@@ -4081,10 +5062,10 @@ var DELIVERY =
 
   /***/
 },
-/* 89 */
+/* 103 */
 /***/function (module, exports, __webpack_require__) {
 
-  var assocIndexOf = __webpack_require__(9);
+  var assocIndexOf = __webpack_require__(10);
 
   /**
    * Gets the list cache value for `key`.
@@ -4106,10 +5087,10 @@ var DELIVERY =
 
   /***/
 },
-/* 90 */
+/* 104 */
 /***/function (module, exports, __webpack_require__) {
 
-  var assocIndexOf = __webpack_require__(9);
+  var assocIndexOf = __webpack_require__(10);
 
   /**
    * Checks if a list cache value for `key` exists.
@@ -4128,10 +5109,10 @@ var DELIVERY =
 
   /***/
 },
-/* 91 */
+/* 105 */
 /***/function (module, exports, __webpack_require__) {
 
-  var assocIndexOf = __webpack_require__(9);
+  var assocIndexOf = __webpack_require__(10);
 
   /**
    * Sets the list cache `key` to `value`.
@@ -4160,10 +5141,10 @@ var DELIVERY =
 
   /***/
 },
-/* 92 */
+/* 106 */
 /***/function (module, exports, __webpack_require__) {
 
-  var ListCache = __webpack_require__(8);
+  var ListCache = __webpack_require__(9);
 
   /**
    * Removes all key-value entries from the stack.
@@ -4181,7 +5162,7 @@ var DELIVERY =
 
   /***/
 },
-/* 93 */
+/* 107 */
 /***/function (module, exports) {
 
   /**
@@ -4205,7 +5186,7 @@ var DELIVERY =
 
   /***/
 },
-/* 94 */
+/* 108 */
 /***/function (module, exports) {
 
   /**
@@ -4225,7 +5206,7 @@ var DELIVERY =
 
   /***/
 },
-/* 95 */
+/* 109 */
 /***/function (module, exports) {
 
   /**
@@ -4245,10 +5226,10 @@ var DELIVERY =
 
   /***/
 },
-/* 96 */
+/* 110 */
 /***/function (module, exports, __webpack_require__) {
 
-  var ListCache = __webpack_require__(8),
+  var ListCache = __webpack_require__(9),
       Map = __webpack_require__(19),
       MapCache = __webpack_require__(20);
 
@@ -4285,13 +5266,13 @@ var DELIVERY =
 
   /***/
 },
-/* 97 */
+/* 111 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isFunction = __webpack_require__(32),
-      isMasked = __webpack_require__(98),
-      isObject = __webpack_require__(10),
-      toSource = __webpack_require__(33);
+  var isFunction = __webpack_require__(33),
+      isMasked = __webpack_require__(112),
+      isObject = __webpack_require__(11),
+      toSource = __webpack_require__(34);
 
   /**
    * Used to match `RegExp`
@@ -4335,10 +5316,10 @@ var DELIVERY =
 
   /***/
 },
-/* 98 */
+/* 112 */
 /***/function (module, exports, __webpack_require__) {
 
-  var coreJsData = __webpack_require__(99);
+  var coreJsData = __webpack_require__(113);
 
   /** Used to detect methods masquerading as native. */
   var maskSrcKey = function () {
@@ -4361,10 +5342,10 @@ var DELIVERY =
 
   /***/
 },
-/* 99 */
+/* 113 */
 /***/function (module, exports, __webpack_require__) {
 
-  var root = __webpack_require__(0);
+  var root = __webpack_require__(1);
 
   /** Used to detect overreaching core-js shims. */
   var coreJsData = root['__core-js_shared__'];
@@ -4373,7 +5354,7 @@ var DELIVERY =
 
   /***/
 },
-/* 100 */
+/* 114 */
 /***/function (module, exports) {
 
   /**
@@ -4392,11 +5373,11 @@ var DELIVERY =
 
   /***/
 },
-/* 101 */
+/* 115 */
 /***/function (module, exports, __webpack_require__) {
 
-  var Hash = __webpack_require__(102),
-      ListCache = __webpack_require__(8),
+  var Hash = __webpack_require__(116),
+      ListCache = __webpack_require__(9),
       Map = __webpack_require__(19);
 
   /**
@@ -4419,14 +5400,14 @@ var DELIVERY =
 
   /***/
 },
-/* 102 */
+/* 116 */
 /***/function (module, exports, __webpack_require__) {
 
-  var hashClear = __webpack_require__(103),
-      hashDelete = __webpack_require__(104),
-      hashGet = __webpack_require__(105),
-      hashHas = __webpack_require__(106),
-      hashSet = __webpack_require__(107);
+  var hashClear = __webpack_require__(117),
+      hashDelete = __webpack_require__(118),
+      hashGet = __webpack_require__(119),
+      hashHas = __webpack_require__(120),
+      hashSet = __webpack_require__(121);
 
   /**
    * Creates a hash object.
@@ -4457,10 +5438,10 @@ var DELIVERY =
 
   /***/
 },
-/* 103 */
+/* 117 */
 /***/function (module, exports, __webpack_require__) {
 
-  var nativeCreate = __webpack_require__(11);
+  var nativeCreate = __webpack_require__(12);
 
   /**
    * Removes all key-value entries from the hash.
@@ -4478,7 +5459,7 @@ var DELIVERY =
 
   /***/
 },
-/* 104 */
+/* 118 */
 /***/function (module, exports) {
 
   /**
@@ -4501,10 +5482,10 @@ var DELIVERY =
 
   /***/
 },
-/* 105 */
+/* 119 */
 /***/function (module, exports, __webpack_require__) {
 
-  var nativeCreate = __webpack_require__(11);
+  var nativeCreate = __webpack_require__(12);
 
   /** Used to stand-in for `undefined` hash values. */
   var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -4537,10 +5518,10 @@ var DELIVERY =
 
   /***/
 },
-/* 106 */
+/* 120 */
 /***/function (module, exports, __webpack_require__) {
 
-  var nativeCreate = __webpack_require__(11);
+  var nativeCreate = __webpack_require__(12);
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -4566,10 +5547,10 @@ var DELIVERY =
 
   /***/
 },
-/* 107 */
+/* 121 */
 /***/function (module, exports, __webpack_require__) {
 
-  var nativeCreate = __webpack_require__(11);
+  var nativeCreate = __webpack_require__(12);
 
   /** Used to stand-in for `undefined` hash values. */
   var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -4595,10 +5576,10 @@ var DELIVERY =
 
   /***/
 },
-/* 108 */
+/* 122 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getMapData = __webpack_require__(12);
+  var getMapData = __webpack_require__(13);
 
   /**
    * Removes `key` and its value from the map.
@@ -4619,7 +5600,7 @@ var DELIVERY =
 
   /***/
 },
-/* 109 */
+/* 123 */
 /***/function (module, exports) {
 
   /**
@@ -4638,10 +5619,10 @@ var DELIVERY =
 
   /***/
 },
-/* 110 */
+/* 124 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getMapData = __webpack_require__(12);
+  var getMapData = __webpack_require__(13);
 
   /**
    * Gets the map value for `key`.
@@ -4660,10 +5641,10 @@ var DELIVERY =
 
   /***/
 },
-/* 111 */
+/* 125 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getMapData = __webpack_require__(12);
+  var getMapData = __webpack_require__(13);
 
   /**
    * Checks if a map value for `key` exists.
@@ -4682,10 +5663,10 @@ var DELIVERY =
 
   /***/
 },
-/* 112 */
+/* 126 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getMapData = __webpack_require__(12);
+  var getMapData = __webpack_require__(13);
 
   /**
    * Sets the map `key` to `value`.
@@ -4710,17 +5691,17 @@ var DELIVERY =
 
   /***/
 },
-/* 113 */
+/* 127 */
 /***/function (module, exports, __webpack_require__) {
 
-  var Stack = __webpack_require__(31),
-      equalArrays = __webpack_require__(35),
-      equalByTag = __webpack_require__(118),
-      equalObjects = __webpack_require__(122),
-      getTag = __webpack_require__(140),
-      isArray = __webpack_require__(1),
-      isBuffer = __webpack_require__(37),
-      isTypedArray = __webpack_require__(39);
+  var Stack = __webpack_require__(32),
+      equalArrays = __webpack_require__(36),
+      equalByTag = __webpack_require__(132),
+      equalObjects = __webpack_require__(136),
+      getTag = __webpack_require__(154),
+      isArray = __webpack_require__(2),
+      isBuffer = __webpack_require__(38),
+      isTypedArray = __webpack_require__(40);
 
   /** Used to compose bitmasks for value comparisons. */
   var COMPARE_PARTIAL_FLAG = 1;
@@ -4797,12 +5778,12 @@ var DELIVERY =
 
   /***/
 },
-/* 114 */
+/* 128 */
 /***/function (module, exports, __webpack_require__) {
 
   var MapCache = __webpack_require__(20),
-      setCacheAdd = __webpack_require__(115),
-      setCacheHas = __webpack_require__(116);
+      setCacheAdd = __webpack_require__(129),
+      setCacheHas = __webpack_require__(130);
 
   /**
    *
@@ -4830,7 +5811,7 @@ var DELIVERY =
 
   /***/
 },
-/* 115 */
+/* 129 */
 /***/function (module, exports) {
 
   /** Used to stand-in for `undefined` hash values. */
@@ -4855,7 +5836,7 @@ var DELIVERY =
 
   /***/
 },
-/* 116 */
+/* 130 */
 /***/function (module, exports) {
 
   /**
@@ -4875,7 +5856,7 @@ var DELIVERY =
 
   /***/
 },
-/* 117 */
+/* 131 */
 /***/function (module, exports) {
 
   /**
@@ -4894,15 +5875,15 @@ var DELIVERY =
 
   /***/
 },
-/* 118 */
+/* 132 */
 /***/function (module, exports, __webpack_require__) {
 
-  var _Symbol5 = __webpack_require__(7),
-      Uint8Array = __webpack_require__(119),
+  var _Symbol5 = __webpack_require__(8),
+      Uint8Array = __webpack_require__(133),
       eq = __webpack_require__(18),
-      equalArrays = __webpack_require__(35),
-      mapToArray = __webpack_require__(120),
-      setToArray = __webpack_require__(121);
+      equalArrays = __webpack_require__(36),
+      mapToArray = __webpack_require__(134),
+      setToArray = __webpack_require__(135);
 
   /** Used to compose bitmasks for value comparisons. */
   var COMPARE_PARTIAL_FLAG = 1,
@@ -5010,10 +5991,10 @@ var DELIVERY =
 
   /***/
 },
-/* 119 */
+/* 133 */
 /***/function (module, exports, __webpack_require__) {
 
-  var root = __webpack_require__(0);
+  var root = __webpack_require__(1);
 
   /** Built-in value references. */
   var Uint8Array = root.Uint8Array;
@@ -5022,7 +6003,7 @@ var DELIVERY =
 
   /***/
 },
-/* 120 */
+/* 134 */
 /***/function (module, exports) {
 
   /**
@@ -5046,7 +6027,7 @@ var DELIVERY =
 
   /***/
 },
-/* 121 */
+/* 135 */
 /***/function (module, exports) {
 
   /**
@@ -5070,10 +6051,10 @@ var DELIVERY =
 
   /***/
 },
-/* 122 */
+/* 136 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getAllKeys = __webpack_require__(123);
+  var getAllKeys = __webpack_require__(137);
 
   /** Used to compose bitmasks for value comparisons. */
   var COMPARE_PARTIAL_FLAG = 1;
@@ -5157,11 +6138,11 @@ var DELIVERY =
 
   /***/
 },
-/* 123 */
+/* 137 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGetAllKeys = __webpack_require__(124),
-      getSymbols = __webpack_require__(126),
+  var baseGetAllKeys = __webpack_require__(138),
+      getSymbols = __webpack_require__(140),
       keys = __webpack_require__(21);
 
   /**
@@ -5179,11 +6160,11 @@ var DELIVERY =
 
   /***/
 },
-/* 124 */
+/* 138 */
 /***/function (module, exports, __webpack_require__) {
 
-  var arrayPush = __webpack_require__(125),
-      isArray = __webpack_require__(1);
+  var arrayPush = __webpack_require__(139),
+      isArray = __webpack_require__(2);
 
   /**
    * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
@@ -5205,7 +6186,7 @@ var DELIVERY =
 
   /***/
 },
-/* 125 */
+/* 139 */
 /***/function (module, exports) {
 
   /**
@@ -5231,11 +6212,11 @@ var DELIVERY =
 
   /***/
 },
-/* 126 */
+/* 140 */
 /***/function (module, exports, __webpack_require__) {
 
-  var arrayFilter = __webpack_require__(127),
-      stubArray = __webpack_require__(128);
+  var arrayFilter = __webpack_require__(141),
+      stubArray = __webpack_require__(142);
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -5267,7 +6248,7 @@ var DELIVERY =
 
   /***/
 },
-/* 127 */
+/* 141 */
 /***/function (module, exports) {
 
   /**
@@ -5298,7 +6279,7 @@ var DELIVERY =
 
   /***/
 },
-/* 128 */
+/* 142 */
 /***/function (module, exports) {
 
   /**
@@ -5327,15 +6308,15 @@ var DELIVERY =
 
   /***/
 },
-/* 129 */
+/* 143 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseTimes = __webpack_require__(130),
-      isArguments = __webpack_require__(36),
-      isArray = __webpack_require__(1),
-      isBuffer = __webpack_require__(37),
+  var baseTimes = __webpack_require__(144),
+      isArguments = __webpack_require__(37),
+      isArray = __webpack_require__(2),
+      isBuffer = __webpack_require__(38),
       isIndex = __webpack_require__(22),
-      isTypedArray = __webpack_require__(39);
+      isTypedArray = __webpack_require__(40);
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -5380,7 +6361,7 @@ var DELIVERY =
 
   /***/
 },
-/* 130 */
+/* 144 */
 /***/function (module, exports) {
 
   /**
@@ -5406,11 +6387,11 @@ var DELIVERY =
 
   /***/
 },
-/* 131 */
+/* 145 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGetTag = __webpack_require__(4),
-      isObjectLike = __webpack_require__(5);
+  var baseGetTag = __webpack_require__(5),
+      isObjectLike = __webpack_require__(6);
 
   /** `Object#toString` result references. */
   var argsTag = '[object Arguments]';
@@ -5430,7 +6411,7 @@ var DELIVERY =
 
   /***/
 },
-/* 132 */
+/* 146 */
 /***/function (module, exports) {
 
   /**
@@ -5454,12 +6435,12 @@ var DELIVERY =
 
   /***/
 },
-/* 133 */
+/* 147 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGetTag = __webpack_require__(4),
+  var baseGetTag = __webpack_require__(5),
       isLength = __webpack_require__(23),
-      isObjectLike = __webpack_require__(5);
+      isObjectLike = __webpack_require__(6);
 
   /** `Object#toString` result references. */
   var argsTag = '[object Arguments]',
@@ -5508,7 +6489,7 @@ var DELIVERY =
 
   /***/
 },
-/* 134 */
+/* 148 */
 /***/function (module, exports) {
 
   /**
@@ -5528,11 +6509,11 @@ var DELIVERY =
 
   /***/
 },
-/* 135 */
+/* 149 */
 /***/function (module, exports, __webpack_require__) {
 
   /* WEBPACK VAR INJECTION */(function (module) {
-    var freeGlobal = __webpack_require__(26);
+    var freeGlobal = __webpack_require__(27);
 
     /** Detect free variable `exports`. */
     var freeExports = (typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) == 'object' && exports && !exports.nodeType && exports;
@@ -5556,15 +6537,15 @@ var DELIVERY =
     module.exports = nodeUtil;
 
     /* WEBPACK VAR INJECTION */
-  }).call(exports, __webpack_require__(38)(module));
+  }).call(exports, __webpack_require__(39)(module));
 
   /***/
 },
-/* 136 */
+/* 150 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isPrototype = __webpack_require__(137),
-      nativeKeys = __webpack_require__(138);
+  var isPrototype = __webpack_require__(151),
+      nativeKeys = __webpack_require__(152);
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -5596,7 +6577,7 @@ var DELIVERY =
 
   /***/
 },
-/* 137 */
+/* 151 */
 /***/function (module, exports) {
 
   /** Used for built-in method references. */
@@ -5620,10 +6601,10 @@ var DELIVERY =
 
   /***/
 },
-/* 138 */
+/* 152 */
 /***/function (module, exports, __webpack_require__) {
 
-  var overArg = __webpack_require__(139);
+  var overArg = __webpack_require__(153);
 
   /* Built-in method references for those with the same name as other `lodash` methods. */
   var nativeKeys = overArg(Object.keys, Object);
@@ -5632,7 +6613,7 @@ var DELIVERY =
 
   /***/
 },
-/* 139 */
+/* 153 */
 /***/function (module, exports) {
 
   /**
@@ -5653,16 +6634,16 @@ var DELIVERY =
 
   /***/
 },
-/* 140 */
+/* 154 */
 /***/function (module, exports, __webpack_require__) {
 
-  var DataView = __webpack_require__(141),
+  var DataView = __webpack_require__(155),
       Map = __webpack_require__(19),
-      Promise = __webpack_require__(142),
-      Set = __webpack_require__(143),
-      WeakMap = __webpack_require__(144),
-      baseGetTag = __webpack_require__(4),
-      toSource = __webpack_require__(33);
+      Promise = __webpack_require__(156),
+      Set = __webpack_require__(157),
+      WeakMap = __webpack_require__(158),
+      baseGetTag = __webpack_require__(5),
+      toSource = __webpack_require__(34);
 
   /** `Object#toString` result references. */
   var mapTag = '[object Map]',
@@ -5718,11 +6699,11 @@ var DELIVERY =
 
   /***/
 },
-/* 141 */
+/* 155 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getNative = __webpack_require__(2),
-      root = __webpack_require__(0);
+  var getNative = __webpack_require__(3),
+      root = __webpack_require__(1);
 
   /* Built-in method references that are verified to be native. */
   var DataView = getNative(root, 'DataView');
@@ -5731,11 +6712,11 @@ var DELIVERY =
 
   /***/
 },
-/* 142 */
+/* 156 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getNative = __webpack_require__(2),
-      root = __webpack_require__(0);
+  var getNative = __webpack_require__(3),
+      root = __webpack_require__(1);
 
   /* Built-in method references that are verified to be native. */
   var Promise = getNative(root, 'Promise');
@@ -5744,11 +6725,11 @@ var DELIVERY =
 
   /***/
 },
-/* 143 */
+/* 157 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getNative = __webpack_require__(2),
-      root = __webpack_require__(0);
+  var getNative = __webpack_require__(3),
+      root = __webpack_require__(1);
 
   /* Built-in method references that are verified to be native. */
   var Set = getNative(root, 'Set');
@@ -5757,11 +6738,11 @@ var DELIVERY =
 
   /***/
 },
-/* 144 */
+/* 158 */
 /***/function (module, exports, __webpack_require__) {
 
-  var getNative = __webpack_require__(2),
-      root = __webpack_require__(0);
+  var getNative = __webpack_require__(3),
+      root = __webpack_require__(1);
 
   /* Built-in method references that are verified to be native. */
   var WeakMap = getNative(root, 'WeakMap');
@@ -5770,10 +6751,10 @@ var DELIVERY =
 
   /***/
 },
-/* 145 */
+/* 159 */
 /***/function (module, exports, __webpack_require__) {
 
-  var isStrictComparable = __webpack_require__(40),
+  var isStrictComparable = __webpack_require__(41),
       keys = __webpack_require__(21);
 
   /**
@@ -5800,16 +6781,16 @@ var DELIVERY =
 
   /***/
 },
-/* 146 */
+/* 160 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseIsEqual = __webpack_require__(34),
-      get = __webpack_require__(147),
-      hasIn = __webpack_require__(151),
+  var baseIsEqual = __webpack_require__(35),
+      get = __webpack_require__(161),
+      hasIn = __webpack_require__(165),
       isKey = __webpack_require__(25),
-      isStrictComparable = __webpack_require__(40),
-      matchesStrictComparable = __webpack_require__(41),
-      toKey = __webpack_require__(13);
+      isStrictComparable = __webpack_require__(41),
+      matchesStrictComparable = __webpack_require__(42),
+      toKey = __webpack_require__(14);
 
   /** Used to compose bitmasks for value comparisons. */
   var COMPARE_PARTIAL_FLAG = 1,
@@ -5837,10 +6818,10 @@ var DELIVERY =
 
   /***/
 },
-/* 147 */
+/* 161 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGet = __webpack_require__(42);
+  var baseGet = __webpack_require__(43);
 
   /**
    * Gets the value at `path` of `object`. If the resolved value is
@@ -5876,10 +6857,10 @@ var DELIVERY =
 
   /***/
 },
-/* 148 */
+/* 162 */
 /***/function (module, exports, __webpack_require__) {
 
-  var memoizeCapped = __webpack_require__(149);
+  var memoizeCapped = __webpack_require__(163);
 
   /** Used to match property names within property paths. */
   var reLeadingDot = /^\./,
@@ -5910,10 +6891,10 @@ var DELIVERY =
 
   /***/
 },
-/* 149 */
+/* 163 */
 /***/function (module, exports, __webpack_require__) {
 
-  var memoize = __webpack_require__(150);
+  var memoize = __webpack_require__(164);
 
   /** Used as the maximum memoize cache size. */
   var MAX_MEMOIZE_SIZE = 500;
@@ -5942,7 +6923,7 @@ var DELIVERY =
 
   /***/
 },
-/* 150 */
+/* 164 */
 /***/function (module, exports, __webpack_require__) {
 
   var MapCache = __webpack_require__(20);
@@ -6021,11 +7002,11 @@ var DELIVERY =
 
   /***/
 },
-/* 151 */
+/* 165 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseHasIn = __webpack_require__(152),
-      hasPath = __webpack_require__(153);
+  var baseHasIn = __webpack_require__(166),
+      hasPath = __webpack_require__(167);
 
   /**
    * Checks if `path` is a direct or inherited property of `object`.
@@ -6061,7 +7042,7 @@ var DELIVERY =
 
   /***/
 },
-/* 152 */
+/* 166 */
 /***/function (module, exports) {
 
   /**
@@ -6080,15 +7061,15 @@ var DELIVERY =
 
   /***/
 },
-/* 153 */
+/* 167 */
 /***/function (module, exports, __webpack_require__) {
 
-  var castPath = __webpack_require__(43),
-      isArguments = __webpack_require__(36),
-      isArray = __webpack_require__(1),
+  var castPath = __webpack_require__(44),
+      isArguments = __webpack_require__(37),
+      isArray = __webpack_require__(2),
       isIndex = __webpack_require__(22),
       isLength = __webpack_require__(23),
-      toKey = __webpack_require__(13);
+      toKey = __webpack_require__(14);
 
   /**
    * Checks if `path` exists on `object`.
@@ -6124,7 +7105,7 @@ var DELIVERY =
 
   /***/
 },
-/* 154 */
+/* 168 */
 /***/function (module, exports) {
 
   /**
@@ -6151,13 +7132,13 @@ var DELIVERY =
 
   /***/
 },
-/* 155 */
+/* 169 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseProperty = __webpack_require__(156),
-      basePropertyDeep = __webpack_require__(157),
+  var baseProperty = __webpack_require__(170),
+      basePropertyDeep = __webpack_require__(171),
       isKey = __webpack_require__(25),
-      toKey = __webpack_require__(13);
+      toKey = __webpack_require__(14);
 
   /**
    * Creates a function that returns the value at `path` of a given object.
@@ -6189,7 +7170,7 @@ var DELIVERY =
 
   /***/
 },
-/* 156 */
+/* 170 */
 /***/function (module, exports) {
 
   /**
@@ -6209,10 +7190,10 @@ var DELIVERY =
 
   /***/
 },
-/* 157 */
+/* 171 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseGet = __webpack_require__(42);
+  var baseGet = __webpack_require__(43);
 
   /**
    * A specialized version of `baseProperty` which supports deep paths.
@@ -6231,10 +7212,10 @@ var DELIVERY =
 
   /***/
 },
-/* 158 */
+/* 172 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseEach = __webpack_require__(159);
+  var baseEach = __webpack_require__(173);
 
   /**
    * The base implementation of `_.some` without support for iteratee shorthands.
@@ -6259,11 +7240,11 @@ var DELIVERY =
 
   /***/
 },
-/* 159 */
+/* 173 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseForOwn = __webpack_require__(160),
-      createBaseEach = __webpack_require__(163);
+  var baseForOwn = __webpack_require__(174),
+      createBaseEach = __webpack_require__(177);
 
   /**
    * The base implementation of `_.forEach` without support for iteratee shorthands.
@@ -6279,10 +7260,10 @@ var DELIVERY =
 
   /***/
 },
-/* 160 */
+/* 174 */
 /***/function (module, exports, __webpack_require__) {
 
-  var baseFor = __webpack_require__(161),
+  var baseFor = __webpack_require__(175),
       keys = __webpack_require__(21);
 
   /**
@@ -6301,10 +7282,10 @@ var DELIVERY =
 
   /***/
 },
-/* 161 */
+/* 175 */
 /***/function (module, exports, __webpack_require__) {
 
-  var createBaseFor = __webpack_require__(162);
+  var createBaseFor = __webpack_require__(176);
 
   /**
    * The base implementation of `baseForOwn` which iterates over `object`
@@ -6323,7 +7304,7 @@ var DELIVERY =
 
   /***/
 },
-/* 162 */
+/* 176 */
 /***/function (module, exports) {
 
   /**
@@ -6354,7 +7335,7 @@ var DELIVERY =
 
   /***/
 },
-/* 163 */
+/* 177 */
 /***/function (module, exports, __webpack_require__) {
 
   var isArrayLike = __webpack_require__(24);
@@ -6392,13 +7373,13 @@ var DELIVERY =
 
   /***/
 },
-/* 164 */
+/* 178 */
 /***/function (module, exports, __webpack_require__) {
 
   var eq = __webpack_require__(18),
       isArrayLike = __webpack_require__(24),
       isIndex = __webpack_require__(22),
-      isObject = __webpack_require__(10);
+      isObject = __webpack_require__(11);
 
   /**
    * Checks if the given arguments are from an iteratee call.
@@ -6425,13 +7406,13 @@ var DELIVERY =
 
   /***/
 },
-/* 165 */
+/* 179 */
 /***/function (module, __webpack_exports__, __webpack_require__) {
 
   "use strict";
   /* harmony export (immutable) */
   __webpack_exports__["a"] = alert;
-  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_sweetalert__ = __webpack_require__(166);
+  /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_sweetalert__ = __webpack_require__(180);
   /* harmony import */var __WEBPACK_IMPORTED_MODULE_0_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sweetalert__);
 
   /**
@@ -6452,7 +7433,7 @@ var DELIVERY =
 
   /***/
 },
-/* 166 */
+/* 180 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -6472,35 +7453,35 @@ var DELIVERY =
    * jQuery-like functions for manipulating the DOM
    */
 
-  var _hasClass$addClass$removeClass$escapeHtml$_show$show$_hide$hide$isDescendant$getTopMargin$fadeIn$fadeOut$fireClick$stopEventPropagation = __webpack_require__(6);
+  var _hasClass$addClass$removeClass$escapeHtml$_show$show$_hide$hide$isDescendant$getTopMargin$fadeIn$fadeOut$fireClick$stopEventPropagation = __webpack_require__(7);
 
   /*
    * Handy utilities
    */
 
-  var _extend$hexToRgb$isIE8$logStr$colorLuminance = __webpack_require__(14);
+  var _extend$hexToRgb$isIE8$logStr$colorLuminance = __webpack_require__(15);
 
   /*
    *  Handle sweetAlert's DOM elements
    */
 
-  var _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition = __webpack_require__(15);
+  var _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition = __webpack_require__(16);
 
   // Handle button events and keyboard events
 
-  var _handleButton$handleConfirm$handleCancel = __webpack_require__(168);
+  var _handleButton$handleConfirm$handleCancel = __webpack_require__(182);
 
-  var _handleKeyDown = __webpack_require__(169);
+  var _handleKeyDown = __webpack_require__(183);
 
   var _handleKeyDown2 = _interopRequireWildcard(_handleKeyDown);
 
   // Default values
 
-  var _defaultParams = __webpack_require__(44);
+  var _defaultParams = __webpack_require__(45);
 
   var _defaultParams2 = _interopRequireWildcard(_defaultParams);
 
-  var _setParameters = __webpack_require__(170);
+  var _setParameters = __webpack_require__(184);
 
   var _setParameters2 = _interopRequireWildcard(_setParameters);
 
@@ -6773,7 +7754,7 @@ var DELIVERY =
 
   /***/
 },
-/* 167 */
+/* 181 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -6821,7 +7802,7 @@ var DELIVERY =
 
   /***/
 },
-/* 168 */
+/* 182 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -6830,11 +7811,11 @@ var DELIVERY =
     value: true
   });
 
-  var _colorLuminance = __webpack_require__(14);
+  var _colorLuminance = __webpack_require__(15);
 
-  var _getModal = __webpack_require__(15);
+  var _getModal = __webpack_require__(16);
 
-  var _hasClass$isDescendant = __webpack_require__(6);
+  var _hasClass$isDescendant = __webpack_require__(7);
 
   /*
    * User clicked on "Confirm"/"OK" or "Cancel"
@@ -6962,7 +7943,7 @@ var DELIVERY =
 
   /***/
 },
-/* 169 */
+/* 183 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -6971,9 +7952,9 @@ var DELIVERY =
     value: true
   });
 
-  var _stopEventPropagation$fireClick = __webpack_require__(6);
+  var _stopEventPropagation$fireClick = __webpack_require__(7);
 
-  var _setFocusStyle = __webpack_require__(15);
+  var _setFocusStyle = __webpack_require__(16);
 
   var handleKeyDown = function handleKeyDown(event, params, modal) {
     var e = event || window.event;
@@ -7047,7 +8028,7 @@ var DELIVERY =
 
   /***/
 },
-/* 170 */
+/* 184 */
 /***/function (module, exports, __webpack_require__) {
 
   "use strict";
@@ -7056,11 +8037,11 @@ var DELIVERY =
     value: true
   });
 
-  var _isIE8 = __webpack_require__(14);
+  var _isIE8 = __webpack_require__(15);
 
-  var _getModal$getInput$setFocusStyle = __webpack_require__(15);
+  var _getModal$getInput$setFocusStyle = __webpack_require__(16);
 
-  var _hasClass$addClass$removeClass$escapeHtml$_show$show$_hide$hide = __webpack_require__(6);
+  var _hasClass$addClass$removeClass$escapeHtml$_show$show$_hide$hide = __webpack_require__(7);
 
   var alertTypes = ['error', 'warning', 'info', 'success', 'input', 'prompt'];
 
