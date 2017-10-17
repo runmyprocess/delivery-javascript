@@ -48,11 +48,7 @@ gulp.task('build', function () {
     .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('toto', sequence(['lint', 'test'], ['doc', 'build']))
-
-gulp.task('default', ['doc', 'build'], function () {
-  // This will only run if the lint task is successful...
-})
+gulp.task('default', sequence('bundle', 'minify'))
 
 // LINT - ESLINT
 gulp.task('lint', () =>
