@@ -9,7 +9,7 @@ cache:
   directories:
     - "node_modules"
 
-script: gulp bundle
+script: gulp
 
 deploy:
   provider: pages
