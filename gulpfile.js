@@ -50,6 +50,8 @@ gulp.task('build', function () {
 
 gulp.task('default', sequence('bundle', 'minify'))
 
+gulp.task('travis', sequence('bundle', 'minify', 'backup', 'publish'))
+
 // LINT - ESLINT
 gulp.task('lint', () =>
   gulp.src('src/js/**/*.js')
@@ -122,7 +124,7 @@ gulp.task('doc', () =>
 )
 
 // DOWNLOAD PAGE
-gulp.task('page', () =>
+gulp.task('publish', () =>
   gulp.src('src/doc.html')
     .pipe(template({
       description: packageJSON.description,
