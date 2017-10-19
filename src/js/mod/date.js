@@ -3,6 +3,7 @@ import isFuture from 'date-fns/is_future'
 import isAfter from 'date-fns/is_after'
 import distanceInWords from 'date-fns/distance_in_words'
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days'
+import dateFnsFormat from 'date-fns/format'
 
 /**
  * Check if a given date is in the future.
@@ -18,6 +19,17 @@ export {isFuture}
  * @returns {boolean} - The first date is after the second date.
  */
 export {isAfter}
+
+/**
+ * Return the formatted date string in the given format.
+ * @param   {timestamp} timestamp - RunMyProcess timestamp expressed in seconds.
+ * @param   {string} format - Format of the date (e.g. 'DD/MM/YYYY').
+ * @returns {string} - Formatted date.
+ */
+export function format (timestamp, format) {
+  var date = new Date(timestamp * 1000)
+  return dateFnsFormat(date, format)
+}
 
 /**
  * Calculate the duration in days between two dates.
