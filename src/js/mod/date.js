@@ -4,6 +4,8 @@ import isAfter from 'date-fns/is_after'
 import distanceInWords from 'date-fns/distance_in_words'
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days'
 import dateFnsFormat from 'date-fns/format'
+import startOfMonth from 'date-fns/start_of_month'
+import subMonths from 'date-fns/sub_months'
 
 /**
  * Check if a given date is in the future.
@@ -63,4 +65,23 @@ export function durationWords (start, end) {
     var duration = distanceInWords(dateEnd, dateStart, { locale: fr })
     return duration
   }
+}
+
+/**
+ * Returns an array of the N past months, starting at the current month.
+ * @param   {integer} length - Number of past months included in the array.
+ * @param   {string} format - Format of the month (e.g. 'MM/YYYY').
+ * @returns {Array} - Array of the N past months.
+ */
+export function listMonths (length, format) {
+  var month = startOfMonth(new Date())
+  var months = []
+  var i = 0
+  while (i < length) {
+    months[i].label = dateFnsFormat(month, format)
+    months[i].value = dateFnsFormat(month, format)
+    subMonths(month, 1)
+    i++
+  }
+  return months
 }
