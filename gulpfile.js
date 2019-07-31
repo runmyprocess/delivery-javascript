@@ -130,7 +130,7 @@ gulp.task('publish', () =>
       prefix: prefix
     }))
     .pipe(rename('index.html'))
-    .pipe(gulp.dest(''))
+    .pipe(gulp.dest('./'))
 )
 
 // DEFAULT
