@@ -22,9 +22,7 @@ const template = require('gulp-template')
 const fs = require('fs')
 
 // Utilities
-const sequence = require('gulp-sequence')
 const rename = require('gulp-rename')
-const gutil = require('gulp-util')
 const del = require('del')
 
 // Webpack config
@@ -48,10 +46,6 @@ gulp.task('build', function () {
     .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('default', sequence('bundle', 'minify'))
-
-gulp.task('travis', sequence('bundle', 'minify', 'backup', 'publish'))
-
 // LINT - ESLINT
 gulp.task('lint', () =>
   gulp.src('src/js/**/*.js')
@@ -71,7 +65,7 @@ gulp.task('test', function () {
         should: require('chai')
       }
     }))
-    .on('error', gutil.log)
+    //.on('error', gutil.log)
 })
 
 // BUNDLE - WEBPACK
@@ -81,12 +75,12 @@ gulp.task('bundle', function (done) {
   return gulp.src(source)
     .pipe(
       webpack(webpackConfig)
-        .on('error', gutil.log)
+        //.on('error', gutil.log)
     )
     .pipe(babel())
     .pipe(rename(prefix + '-' + packageJSON.version + '.js'))
     .pipe(gulp.dest('./dist/js/tmp'))
-    // .on('end', done)
+    .on('end', done)
 })
 
 // TRANSPILE - BABEL
@@ -138,3 +132,9 @@ gulp.task('publish', () =>
     .pipe(rename('index.html'))
     .pipe(gulp.dest(''))
 )
+
+// DEFAULT
+gulp.task('default', gulp.series('bundle', 'minify'))
+
+// TRAVIS CI
+gulp.task('travis', gulp.series('bundle', 'minify', 'backup', 'publish'))

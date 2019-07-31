@@ -42,7 +42,6 @@
     "gulp-sequence": "^1.0.0",
     "gulp-template": "^5.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8",
     "mocha": "^6.2.0",
     "webpack": "^4.38.0",
     "webpack-dev-server": "^3.7.2",
